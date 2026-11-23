@@ -1,0 +1,20 @@
+{
+  "name": "orient-tn",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Orient TN — CV to career opportunities, MVP (no auth, no database)",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "check": "node --check server.mjs && node --check lib/profile.mjs && node --check lib/jobs.mjs && node --check lib/ai.mjs && node --check lib/handlers.mjs && node --check api/analyze.js && node --check api/jobs.js && node --check api/health.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.12.0",
+    "mammoth": "^1.4.20",
+    "pdf-parse": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
