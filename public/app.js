@@ -55,7 +55,7 @@
       cvKicker: 'CV ADAPTÉ À L’OFFRE',
       cvTitle: 'Générez un CV adapté à l’offre',
       cvSub: 'Collez la description du poste. L’application analyse les mots-clés localement et génère un CV amélioré dans un format professionnel, sans API externe.',
-      cvJdLabel: 'Description du poste (JD = Job Description)',
+      cvJdLabel: 'Description du poste',
       cvRoleLabel: 'Intitulé du poste (optionnel)',
       cvGenerate: 'Générer mon CV',
       cvDownload: 'Télécharger HTML',
@@ -158,7 +158,7 @@
       cvKicker: 'CV TAILORED TO THE JOB',
       cvTitle: 'Generate a CV tailored to the job',
       cvSub: 'Paste the job description. The app analyzes keywords locally and generates an improved CV in a professional format, with no external APIs.',
-      cvJdLabel: 'Job description (JD)',
+      cvJdLabel: 'Job description',
       cvRoleLabel: 'Job title (optional)',
       cvGenerate: 'Generate my CV',
       cvDownload: 'Download HTML',
@@ -261,7 +261,7 @@
       cvKicker: 'سيرة ذاتية مكيّفة مع العرض',
       cvTitle: 'أنشئ سيرة ذاتية مكيّفة مع الوظيفة',
       cvSub: 'الصق وصف الوظيفة. يحلل التطبيق الكلمات المفتاحية محلياً ويولّد سيرة ذاتية محسّنة بتنسيق احترافي، بدون أي API خارجي.',
-      cvJdLabel: 'وصف الوظيفة (JD)',
+      cvJdLabel: 'وصف الوظيفة',
       cvRoleLabel: 'اسم الوظيفة (اختياري)',
       cvGenerate: 'أنشئ سيرتي الذاتية',
       cvDownload: 'تحميل HTML',
@@ -359,6 +359,29 @@
   }
 
   function applyI18n(next) {
+    if (next && next !== lang && window.orientLoader) {
+      window.orientLoader.show();
+      setTimeout(() => {
+        lang = next;
+        const d = dict();
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        $$('[data-i18n]').forEach(el => { const v = d[el.dataset.i18n] ?? I18N.fr[el.dataset.i18n]; if (v != null) el.textContent = v; });
+        $$('[data-i18n-html]').forEach(el => { const v = d[el.dataset.i18nHtml] ?? I18N.fr[el.dataset.i18nHtml]; if (v != null) el.innerHTML = v; });
+        $$('.lang').forEach(b => b.classList.toggle('is-active', b.dataset.lang === lang));
+        $('#targetRole').placeholder = d.ph.role;
+        $('#cvText').placeholder = d.ph.cv;
+        translateOptions($('#contract'), 'contract');
+        translateOptions($('#mode'), 'mode');
+        translateOptions($('#availability'), 'availability');
+        if (profile) renderProfile();
+        if (jobsData) renderJobs();
+        renderTracker();
+        renderVersions();
+        window.orientLoader.hide();
+      }, 600);
+      return;
+    }
     if (next) lang = next;
     const d = dict();
     document.documentElement.lang = lang;
