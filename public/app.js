@@ -72,7 +72,7 @@
       dyn: {
         candidate: 'Candidat', years: 'années d’expérience estimées', level: 'Niveau',
         entry: 'Débutant', mid: 'Intermédiaire', senior: 'Senior',
-        none: 'Non renseigné', match: 'match', view: 'Voir l’offre',
+        none: 'Non renseigné', noKw: 'Aucun mot-clé détecté', noGap: 'Aucun écart détecté', match: 'match', view: 'Voir l’offre',
         jobsSubtitle: '{name}, {n} offres analysées selon votre objectif et vos compétences.',
         archetype: 'Votre profil se rapproche d’un profil « {label} ». C’est l’angle à mettre en avant dans vos candidatures.',
         gaps: 'À renforcer : {list}', noJobs: 'Aucune offre en direct pour ce filtre. Les portails ci-dessus restent la meilleure piste.',
@@ -175,7 +175,7 @@
       dyn: {
         candidate: 'Candidate', years: 'years of experience estimated', level: 'Level',
         entry: 'Entry', mid: 'Mid-level', senior: 'Senior',
-        none: 'Not listed', match: 'match', view: 'View job',
+        none: 'Not listed', noKw: 'No keywords detected', noGap: 'No gaps detected', match: 'match', view: 'View job',
         jobsSubtitle: '{name}, {n} offers analyzed against your goal and skills.',
         archetype: 'Your profile is close to a “{label}” profile. That’s the angle to lead with in applications.',
         gaps: 'To strengthen: {list}', noJobs: 'No live offers for this filter. The portals above remain your best lead.',
@@ -278,7 +278,7 @@
       dyn: {
         candidate: 'مُرشّح', years: 'سنة خبرة مقدّرة', level: 'المستوى',
         entry: 'مبتدئ', mid: 'متوسط', senior: 'خبير',
-        none: 'غير مذكور', match: 'تطابق', view: 'عرض الوظيفة',
+        none: 'غير مذكور', noKw: 'لا كلمات مفتاحية', noGap: 'لا فجوات', match: 'تطابق', view: 'عرض الوظيفة',
         jobsSubtitle: '{name}، تم تحليل {n} عرضاً حسب هدفك ومهاراتك.',
         archetype: 'ملفك قريب من ملف «{label}». هذه هي الزاوية التي يجب إبرازها في ترشّحاتك.',
         gaps: 'نقاط للتقوية: {list}', noJobs: 'لا توجد عروض مباشرة لهذا المرشّح. البوابات أعلاه تبقى أفضل طريق.',
@@ -644,7 +644,7 @@
     const f = $('#cvPreviewFrame'); if (f) f.removeAttribute('srcdoc');
     const m = $('#cvMatched'); if (m) m.innerHTML = '';
     const x = $('#cvMissing'); if (x) x.innerHTML = '';
-    const pct = $('#cvMatchPct'); if (pct) pct.textContent = '0%';
+    const pct = $('#cvMatchPct'); if (pct) pct.textContent = '—';
     const eg = $('#cvEvidenceGuard'); if (eg) eg.innerHTML = '';
     const ct = $('#coverText'); if (ct) ct.textContent = '';
     const pc = $('#prepContent'); if (pc) pc.innerHTML = '';
@@ -755,11 +755,12 @@
   /* ---------- CV generation (local, no external API) ---------- */
   function renderCVResult(data) {
     cvGenerated = data;
-    $('#cvMatchPct').textContent = `${Number(data.match?.pct || 0)}%`;
+    const pct = Number(data.match?.pct || 0);
+    $('#cvMatchPct').textContent = pct > 0 ? `${pct}%` : '—';
     const matched = data.match?.matched || [];
     const missing = data.match?.missing || [];
-    $('#cvMatched').innerHTML = matched.length ? matched.map(s => `<span class="chip hit">${esc(s)}</span>`).join('') : `<span class="empty">${esc(t('dyn.none'))}</span>`;
-    $('#cvMissing').innerHTML = missing.length ? missing.map(s => `<span class="chip gap">${esc(s)}</span>`).join('') : `<span class="empty">${esc(t('dyn.none'))}</span>`;
+    $('#cvMatched').innerHTML = matched.length ? matched.map(s => `<span class="chip hit">${esc(s)}</span>`).join('') : `<span class="empty">${esc(t('dyn.noKw'))}</span>`;
+    $('#cvMissing').innerHTML = missing.length ? missing.map(s => `<span class="chip gap">${esc(s)}</span>`).join('') : `<span class="empty">${esc(t('dyn.noGap'))}</span>`;
     const frame = $('#cvPreviewFrame'); if (frame) frame.srcdoc = data.html || '';
     let extra = $('#cvEvidenceGuard');
     if (!extra) { extra = document.createElement('div'); extra.id='cvEvidenceGuard'; extra.className='cv-extra'; $('#cvResult .cv-match-summary')?.appendChild(extra); }
