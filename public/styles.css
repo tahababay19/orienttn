@@ -39,6 +39,7 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;border-radius:100px;padding:12px 22px;font-weight:600;font-size:.94rem;background:var(--primary);color:#fff;transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .22s,color .22s;white-space:nowrap}
+.btn-success{background:#dcfce7 !important;color:#15803d !important;border-color:#86efac !important;transform:scale(1.02)}
 .btn svg{transition:transform .22s var(--ease)}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);background:var(--primary-deep)}
 .btn:hover svg{transform:translateX(4px)}

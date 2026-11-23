@@ -92,6 +92,7 @@
         errPrep: 'Impossible de générer la préparation entretien.',
         errGap: 'Impossible de générer le plan de progression.',
         cvSaved: 'Version CV sauvegardée localement.',
+        cvDone: 'CV généré ✓', coverDone: 'Lettre générée ✓',
         workspaceCleared: 'Données locales effacées.',
         copied: 'Copié.',
         trackerEmpty: 'Aucune candidature suivie.',
@@ -194,6 +195,7 @@
         errPrep: 'Could not generate interview prep.',
         errGap: 'Could not generate gap roadmap.',
         cvSaved: 'CV version saved locally.',
+        cvDone: 'CV generated ✓', coverDone: 'Letter generated ✓',
         workspaceCleared: 'Local data cleared.',
         copied: 'Copied.',
         trackerEmpty: 'No tracked applications.',
@@ -296,6 +298,7 @@
         errPrep: 'تعذر إنشاء تحضير المقابلة.',
         errGap: 'تعذر إنشاء خطة التطوير.',
         cvSaved: 'تم حفظ نسخة السيرة الذاتية محلياً.',
+        cvDone: 'تم إنشاء السيرة ✓', coverDone: 'تم إنشاء الخطاب ✓',
         workspaceCleared: 'تم مسح البيانات المحلية.',
         copied: 'تم النسخ.',
         trackerEmpty: 'لا توجد ترشيحات متتبعة.',
@@ -768,6 +771,12 @@
     $('#cvStatus').textContent = t('dyn.cvReady');
   }
 
+  function flashSuccess(btn, label) {
+    const orig = btn.innerHTML;
+    btn.classList.add('btn-success');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ' + esc(label);
+    setTimeout(() => { btn.classList.remove('btn-success'); btn.innerHTML = orig; }, 2200);
+  }
   async function generateCV() {
     if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
     const jdText = ($('#cvJd')?.value || '').trim();
@@ -781,6 +790,7 @@
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || t('dyn.errCvGen'));
       renderCVResult(data);
+      flashSuccess(btn, t('dyn.cvDone'));
     } catch (e) { $('#cvStatus').textContent = e.message || t('dyn.errCvGen'); }
     finally { btn.disabled = false; btn.style.opacity = ''; }
   }
@@ -793,6 +803,7 @@
       const res = await fetch('/api/cover-letter', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'', company: $('#cvCompany')?.value||'', lang: $('#cvLang')?.value||'fr' }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errCover'));
       coverGenerated = data; $('#coverText').textContent = data.text || ''; $('#coverResult').hidden = false; $('#cvStatus').textContent = '';
+      flashSuccess($('#cvCoverBtn'), t('dyn.coverDone'));
     } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errCover'); }
   }
   async function generatePrep() {
