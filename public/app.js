@@ -11,6 +11,16 @@
   const I18N = {
     fr: {
       navHow: 'Comment ça marche', navPortals: 'Portails', navTool: 'L’outil', navCta: 'Commencer',
+      portalsKicker: 'PORTAILS TUNISIENS', portalsTitle: 'Les bons endroits pour postuler.',
+      portalsSub: 'Orient TN vous oriente vers les portails les plus pertinents pour votre profil. Vous postulez toujours vous-même, directement à la source.',
+      portalBadgePopular: 'Populaire', portalBadgeGeneral: 'Généraliste', portalBadgePublic: 'Public', portalBadgePro: 'Réseau pro', portalBadgeTech: 'Tech',
+      portalTanitDesc: 'N°1 en Tunisie pour CDI, CDD et stages PFE.',
+      portalKeejobDesc: 'Offres CDI, CDD, stages et freelance en Tunisie.',
+      portalAnetiDesc: 'Programmes SIVP/CIVP et insertion des diplômés.',
+      portalLinkedinDesc: 'Postes tech, multinationaux et opportunités internationales.',
+      portalLcfDesc: 'Offres tech vérifiées à Tunis et en remote.',
+      portalTagPublic: 'Public', portalTagNetwork: 'Réseau',
+      portalsNote: 'Conseil : après analyse de votre CV, Orient TN pré-remplit des recherches adaptées à votre profil sur ces portails.',
       heroEyebrow: 'ORIENTATION · INSERTION · TUNISIE',
       heroTitle: 'Votre CV mérite<br/>mieux qu’un <em>dossier</em>.',
       heroLede: 'Déposez votre CV. On lit votre parcours, on comprend votre objectif — CDI, stage PFE ou SIVP — et on vous montre les portails et les offres qui correspondent vraiment.',
@@ -53,8 +63,9 @@
       cvPreview: 'Aperçu du CV généré',
       cvMatched: 'Mots-clés couverts',
       cvMissing: 'À renforcer si vrai',
+      cvMatchLabel: 'match ATS',
       cvCompanyLabel: 'Entreprise (optionnel)', cvLangLabel: 'Langue du CV', cvJdFileLabel: 'Ou importer la JD (PDF/DOCX/TXT)',
-      cvCoverBtn: 'Lettre de motivation', cvPrepBtn: 'Préparation entretien', cvGapBtn: 'Plan de progression', cvSaveBtn: 'Sauver version',
+      cvCoverBtn: 'Lettre de motivation', cvPrepBtn: 'Préparation entretien', cvGapBtn: 'Plan de progression', cvSaveBtn: 'Sauver version', cvDemoJd: 'Exemple JD', clearWorkspace: 'Effacer données locales',
       coverTitle: 'Lettre de motivation', prepTitle: 'Préparation entretien', gapTitle: 'Plan de progression', copyText: 'Copier',
       trackerKicker: 'SUIVI LOCAL', trackerTitle: 'Suivi des candidatures & versions CV', trackerSub: 'Stocké localement dans votre navigateur. Exportez/importez en JSON.',
       trCompany: 'Entreprise', trRole: 'Poste', trStatus: 'Statut', trLink: 'Lien', trAdd: 'Ajouter au suivi', trExport: 'Exporter JSON', trImport: 'Importer JSON', trList: 'Candidatures', cvVersions: 'Versions CV',
@@ -81,6 +92,7 @@
         errPrep: 'Impossible de générer la préparation entretien.',
         errGap: 'Impossible de générer le plan de progression.',
         cvSaved: 'Version CV sauvegardée localement.',
+        workspaceCleared: 'Données locales effacées.',
         copied: 'Copié.',
         trackerEmpty: 'Aucune candidature suivie.',
         versionsEmpty: 'Aucune version sauvegardée.',
@@ -101,6 +113,16 @@
     },
     en: {
       navHow: 'How it works', navPortals: 'Portals', navTool: 'The tool', navCta: 'Get started',
+      portalsKicker: 'TUNISIAN PORTALS', portalsTitle: 'The right places to apply.',
+      portalsSub: 'Orient TN points you to the portals most relevant to your profile. You always apply yourself, directly at the source.',
+      portalBadgePopular: 'Popular', portalBadgeGeneral: 'General', portalBadgePublic: 'Public', portalBadgePro: 'Professional', portalBadgeTech: 'Tech',
+      portalTanitDesc: 'No. 1 in Tunisia for full-time, fixed-term, and PFE internships.',
+      portalKeejobDesc: 'Full-time, fixed-term, internship, and freelance offers in Tunisia.',
+      portalAnetiDesc: 'SIVP/CIVP programs and graduate employment support.',
+      portalLinkedinDesc: 'Tech roles, multinationals, and international opportunities.',
+      portalLcfDesc: 'Verified tech offers in Tunis and remote.',
+      portalTagPublic: 'Public', portalTagNetwork: 'Network',
+      portalsNote: 'Tip: after analyzing your CV, Orient TN pre-fills searches tailored to your profile on these portals.',
       heroEyebrow: 'GUIDANCE · EMPLOYMENT · TUNISIA',
       heroTitle: 'Your CV deserves<br/>more than a <em>folder</em>.',
       heroLede: 'Upload your CV. We read your background, understand your goal — permanent role, internship or SIVP — and show you the portals and offers that actually fit.',
@@ -143,8 +165,9 @@
       cvPreview: 'Generated CV preview',
       cvMatched: 'Matched keywords',
       cvMissing: 'Strengthen if true',
+      cvMatchLabel: 'ATS match',
       cvCompanyLabel: 'Company (optional)', cvLangLabel: 'CV language', cvJdFileLabel: 'Or import JD (PDF/DOCX/TXT)',
-      cvCoverBtn: 'Cover letter', cvPrepBtn: 'Interview prep', cvGapBtn: 'Gap roadmap', cvSaveBtn: 'Save version',
+      cvCoverBtn: 'Cover letter', cvPrepBtn: 'Interview prep', cvGapBtn: 'Gap roadmap', cvSaveBtn: 'Save version', cvDemoJd: 'Example JD', clearWorkspace: 'Clear local data',
       coverTitle: 'Cover letter', prepTitle: 'Interview preparation', gapTitle: 'Gap roadmap', copyText: 'Copy',
       trackerKicker: 'LOCAL TRACKER', trackerTitle: 'Application tracker & CV versions', trackerSub: 'Stored locally in your browser. Export/import JSON.',
       trCompany: 'Company', trRole: 'Role', trStatus: 'Status', trLink: 'Link', trAdd: 'Add to tracker', trExport: 'Export JSON', trImport: 'Import JSON', trList: 'Applications', cvVersions: 'CV versions',
@@ -171,6 +194,7 @@
         errPrep: 'Could not generate interview prep.',
         errGap: 'Could not generate gap roadmap.',
         cvSaved: 'CV version saved locally.',
+        workspaceCleared: 'Local data cleared.',
         copied: 'Copied.',
         trackerEmpty: 'No tracked applications.',
         versionsEmpty: 'No saved versions.',
@@ -191,6 +215,16 @@
     },
     ar: {
       navHow: 'كيف يعمل', navPortals: 'البوابات', navTool: 'الأداة', navCta: 'ابدأ الآن',
+      portalsKicker: 'البوابات التونسية', portalsTitle: 'أفضل الأماكن للتقديم.',
+      portalsSub: 'يوجهك Orient TN نحو البوابات الأنسب لملفك. أنت دائماً من يتقدم بنفسه، مباشرة من المصدر.',
+      portalBadgePopular: 'شائع', portalBadgeGeneral: 'عام', portalBadgePublic: 'عمومي', portalBadgePro: 'مهني', portalBadgeTech: 'تقني',
+      portalTanitDesc: 'الأول في تونس لعقود CDI وCDD وتربصات PFE.',
+      portalKeejobDesc: 'عروض CDI وCDD وتربصات وعمل حر في تونس.',
+      portalAnetiDesc: 'برامج SIVP/CIVP وإدماج حاملي الشهادات.',
+      portalLinkedinDesc: 'وظائف تقنية، شركات متعددة الجنسيات وفرص دولية.',
+      portalLcfDesc: 'عروض تقنية موثقة في تونس وعن بعد.',
+      portalTagPublic: 'عمومي', portalTagNetwork: 'شبكة',
+      portalsNote: 'نصيحة: بعد تحليل سيرتك الذاتية، يملأ Orient TN عمليات بحث مناسبة لملفك على هذه البوابات.',
       heroEyebrow: 'توجيه · تشغيل · تونس',
       heroTitle: 'سيرتك الذاتية تستحق<br/>أكثر من <em>ملف</em>.',
       heroLede: 'ارفع سيرتك الذاتية. نقرأ مسارك ونفهم هدفك — عقد دائم، تربص أو SIVP — ونعرض لك البوابات والعروض التي تناسبك فعلاً.',
@@ -233,8 +267,9 @@
       cvPreview: 'معاينة السيرة الذاتية',
       cvMatched: 'الكلمات المفتاحية المطابقة',
       cvMissing: 'للتعزيز إذا كان صحيحاً',
+      cvMatchLabel: 'تطابق ATS',
       cvCompanyLabel: 'الشركة (اختياري)', cvLangLabel: 'لغة السيرة الذاتية', cvJdFileLabel: 'أو استيراد وصف الوظيفة (PDF/DOCX/TXT)',
-      cvCoverBtn: 'خطاب التحفيز', cvPrepBtn: 'تحضير المقابلة', cvGapBtn: 'خطة التطوير', cvSaveBtn: 'حفظ النسخة',
+      cvCoverBtn: 'خطاب التحفيز', cvPrepBtn: 'تحضير المقابلة', cvGapBtn: 'خطة التطوير', cvSaveBtn: 'حفظ النسخة', cvDemoJd: 'مثال JD', clearWorkspace: 'مسح البيانات المحلية',
       coverTitle: 'خطاب التحفيز', prepTitle: 'تحضير المقابلة', gapTitle: 'خطة التطوير', copyText: 'نسخ',
       trackerKicker: 'تتبع محلي', trackerTitle: 'تتبع الترشيحات ونسخ السيرة الذاتية', trackerSub: 'محفوظ محلياً في متصفحك. تصدير/استيراد JSON.',
       trCompany: 'الشركة', trRole: 'الوظيفة', trStatus: 'الحالة', trLink: 'الرابط', trAdd: 'إضافة للتتبع', trExport: 'تصدير JSON', trImport: 'استيراد JSON', trList: 'الترشيحات', cvVersions: 'نسخ السيرة الذاتية',
@@ -261,6 +296,7 @@
         errPrep: 'تعذر إنشاء تحضير المقابلة.',
         errGap: 'تعذر إنشاء خطة التطوير.',
         cvSaved: 'تم حفظ نسخة السيرة الذاتية محلياً.',
+        workspaceCleared: 'تم مسح البيانات المحلية.',
         copied: 'تم النسخ.',
         trackerEmpty: 'لا توجد ترشيحات متتبعة.',
         versionsEmpty: 'لا توجد نسخ محفوظة.',
@@ -346,6 +382,12 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => io.observe(el));
+    // Safety net: never leave above-the-fold content permanently invisible.
+    setTimeout(() => reveals.forEach(el => {
+      if (el.classList.contains('in')) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 120) el.classList.add('in');
+    }), 1800);
 
     if (!window.gsap) return; // CSS fallback already handles the reveals
     const g = window.gsap;
@@ -392,8 +434,9 @@
 
   function initIntake() {
     const drop = $('#drop'), input = $('#file');
-    drop.addEventListener('click', e => { if (e.target.closest('#clearFile')) return; input.click(); });
+    // input is an invisible overlay over the drop zone; clicks natively open file picker
     drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
+    $('#clearFile')?.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); fileData = null; input.value = ''; $('#fileChip').hidden = true; });
     input.addEventListener('change', () => setFile(input.files[0]));
     ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('drag'); }));
     ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('drag'); }));
@@ -522,7 +565,7 @@
     if (!jobsData || !profile) return;
     const d = dict(), dy = d.dyn;
     $('#jobsSubtitle').textContent = t('dyn.jobsSubtitle', { name: profile.name, n: jobsData.liveCount ?? jobsData.jobs.length });
-    $('#portals').innerHTML = (jobsData.links || []).map(b => `
+    $('#jobPortals').innerHTML = (jobsData.links || []).map(b => `
       <a class="portal" href="${esc(b.url)}" target="_blank" rel="noopener noreferrer" style="--pc:${esc(b.color || '#2563EB')}">
         <div class="portal-top"><b>${esc(b.name)}</b><span class="portal-match">${Number(b.match) || 0}% ${esc(dy.match)}</span></div>
         <p>${esc(b.note)}</p>
@@ -573,7 +616,7 @@
     maxStep = 3;
     goStep(3);
     $('#jobs').innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
-    $('#portals').innerHTML = '';
+    $('#jobPortals').innerHTML = '';
     try {
       const res = await fetch('/api/jobs', {
         method: 'POST',
@@ -613,6 +656,9 @@
     $('#contract').value = 'CDI'; $('#mode').value = 'Hybride'; $('#availability').value = 'Immédiate';
     const jr = $('#cvJd'); if (jr) jr.value = '';
     const cr = $('#cvRole'); if (cr) cr.value = '';
+    const cc = $('#cvCompany'); if (cc) cc.value = '';
+    const pr = $('#profileResult'); if (pr) pr.hidden = true;
+    const sc = $('#scanning'); if (sc) sc.hidden = true;
     resetCV();
     $$('.filter').forEach(b => b.classList.toggle('is-active', b.dataset.filter === 'Tous'));
     clearError();
@@ -650,6 +696,37 @@
   function importTracker(file) {
     const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(String(r.result||'{}')); if(Array.isArray(d.tracker)) tracker=d.tracker.slice(0,50); if(Array.isArray(d.cvVersions)) cvVersions=d.cvVersions.slice(0,12); saveJSON(TRACK_KEY,tracker); saveJSON(VERSIONS_KEY,cvVersions); renderTracker(); renderVersions(); }catch{} };
     r.readAsText(file);
+  }
+
+  function loadDemoJD() {
+    const lang = ($('#cvLang')?.value || 'fr');
+    const demo = lang === 'en'
+      ? `Full-Stack Developer (React / Node.js)\nCompany: Tunis Tech\nLocation: Tunis (Hybrid)\nContract: CDI\n\nResponsibilities:\n- Build and maintain web applications using React, TypeScript, and Node.js\n- Design REST APIs and integrate PostgreSQL databases\n- Write clean, tested code and participate in code reviews\n- Collaborate with product/design teams in Agile/Scrum\n- Use Git, CI/CD pipelines, and Docker for delivery\n\nRequirements:\n- 2+ years experience in web development\n- Strong JavaScript/TypeScript, React, Node.js\n- SQL/PostgreSQL, Git, REST APIs\n- Good communication in French and English\nNice to have: Docker, AWS, testing, Next.js`
+      : `Développeur Full-Stack (React / Node.js)\nEntreprise : Tunis Tech\nLieu : Tunis (Hybride)\nContrat : CDI\n\nMissions :\n- Développer et maintenir des applications web avec React, TypeScript et Node.js\n- Concevoir des API REST et intégrer des bases PostgreSQL\n- Écrire du code propre, testé, et participer aux revues de code\n- Collaborer avec les équipes produit/design en Agile/Scrum\n- Utiliser Git, pipelines CI/CD et Docker pour la livraison\n\nProfil recherché :\n- 2+ ans d'expérience en développement web\n- Solide maîtrise JavaScript/TypeScript, React, Node.js\n- SQL/PostgreSQL, Git, API REST\n- Bonne communication en français et anglais\nAtouts : Docker, AWS, tests, Next.js`;
+    $('#cvJd').value = demo;
+    if (!$('#cvRole')?.value) $('#cvRole').value = lang === 'en' ? 'Full-Stack Developer React/Node.js' : 'Développeur Full-Stack React/Node.js';
+    if (!$('#cvCompany')?.value) $('#cvCompany').value = 'Tunis Tech';
+    $('#cvStatus').textContent = lang === 'en' ? 'Example JD loaded — you can edit it.' : 'Exemple JD chargé — vous pouvez le modifier.';
+  }
+
+  function clearWorkspace() {
+    const ok = confirm(lang === 'en' ? 'Clear local profile, tracker, and CV versions from this browser?' : lang === 'ar' ? 'مسح الملف الشخصي والتتبع ونسخ السيرة من هذا المتصفح؟' : 'Effacer le profil local, le suivi et les versions CV de ce navigateur ?');
+    if (!ok) return;
+    try { localStorage.removeItem(PROFILE_KEY); localStorage.removeItem(TRACK_KEY); localStorage.removeItem(VERSIONS_KEY); localStorage.removeItem('orient-tn-session'); } catch {}
+    profile = null; jobsData = null; fileData = null; tracker = []; cvVersions = [];
+    resetCV();
+    renderTracker(); renderVersions();
+    const pr = $('#profileResult'); if (pr) pr.hidden = true;
+    const sc = $('#scanning'); if (sc) sc.hidden = true;
+    $('#file').value = ''; $('#fileChip').hidden = true; $('#cvText').value = '';
+    $('#targetRole').value = ''; $('#city').value = 'Tunis';
+    $('#contract').value = 'CDI'; $('#mode').value = 'Hybride'; $('#availability').value = 'Immédiate';
+    const jr = $('#cvJd'); if (jr) jr.value = '';
+    const cr = $('#cvRole'); if (cr) cr.value = '';
+    const cc = $('#cvCompany'); if (cc) cc.value = '';
+    $('#jobs').innerHTML = ''; $('#jobPortals').innerHTML = '';
+    maxStep = 1; goStep(1, true);
+    $('#cvStatus').textContent = t('dyn.workspaceCleared');
   }
 
   async function handleJdFile(file) {
@@ -721,21 +798,26 @@
   async function generatePrep() {
     if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
     const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    const lang = ($('#cvLang')?.value || 'fr');
     $('#cvStatus').textContent = '...';
     try {
-      const res = await fetch('/api/interview-prep', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'' }) });
+      const res = await fetch('/api/interview-prep', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'', lang }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errPrep'));
+      const labels = lang === 'en'
+        ? { tech:'Technical', beh:'Behavioral', role:'Role', gaps:'Gaps to prepare' }
+        : { tech:'Technique', beh:'Comportemental', role:'Rôle', gaps:'Points à préparer' };
       const sec = (title, items) => '<div class="prep-sec"><h5>'+esc(title)+'</h5>'+items.map(i=>'<div class="prep-q"><strong>'+esc(i.q)+'</strong><div class="muted small-note">'+esc(i.why||'')+'</div><div class="small-note">STAR: '+esc(i.star||'')+'</div></div>').join('')+'</div>';
-      $('#prepContent').innerHTML = sec('Technical', data.technical||[]) + sec('Behavioral', data.behavioral||[]) + sec('Role', data.roleQuestions||[]) + (data.gapsToPrepare?.length?'<div class="prep-sec"><h5>Gaps to prepare</h5><ul class="small-list">'+data.gapsToPrepare.map(g=>'<li>'+esc(g)+'</li>').join('')+'</ul></div>':'');
+      $('#prepContent').innerHTML = sec(labels.tech, data.technical||[]) + sec(labels.beh, data.behavioral||[]) + sec(labels.role, data.roleQuestions||[]) + (data.gapsToPrepare?.length?'<div class="prep-sec"><h5>'+esc(labels.gaps)+'</h5><ul class="small-list">'+data.gapsToPrepare.map(g=>'<li>'+esc(g)+'</li>').join('')+'</ul></div>':'');
       $('#prepResult').hidden = false; $('#cvStatus').textContent = '';
     } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errPrep'); }
   }
   async function generateGap() {
     if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
     const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    const lang = ($('#cvLang')?.value || 'fr');
     $('#cvStatus').textContent = '...';
     try {
-      const res = await fetch('/api/gap-roadmap', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText }) });
+      const res = await fetch('/api/gap-roadmap', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, lang }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errGap'));
       $('#gapContent').innerHTML = (data.roadmap||[]).map(r=>'<div class="prep-q"><strong>'+esc(r.skill)+'</strong><div class="small-note">'+esc(r.action)+'</div><div class="small-note muted">'+esc(r.resource)+'</div><div class="small-note">'+esc(r.project)+'</div><div class="small-note muted">'+esc(r.honest)+'</div></div>').join('') || '<p class="muted">'+esc(t('dyn.noGaps'))+'</p>';
       $('#gapResult').hidden = false; $('#cvStatus').textContent = '';
@@ -786,13 +868,15 @@
     $('#cvPrepBtn')?.addEventListener('click', generatePrep);
     $('#cvGapBtn')?.addEventListener('click', generateGap);
     $('#cvSaveBtn')?.addEventListener('click', saveCVVersion);
+    $('#cvDemoJdBtn')?.addEventListener('click', loadDemoJD);
     $('#cvJdFile')?.addEventListener('change', e => { handleJdFile(e.target.files?.[0]); e.target.value=''; });
     $('#coverCopyBtn')?.addEventListener('click', async ()=>{ try{ await navigator.clipboard.writeText($('#coverText').textContent||''); $('#cvStatus').textContent=t('dyn.copied'); }catch{} });
     $('#coverDownloadBtn')?.addEventListener('click', ()=>{ if(!coverGenerated?.html) return; const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([coverGenerated.html],{type:'text/html;charset=utf-8'})); a.download='cover-letter.html'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); });
     $('#trAddBtn')?.addEventListener('click', ()=>{ addTrackerItem({ company: $('#trCompany').value.trim(), role: $('#trRole').value.trim(), status: $('#trStatus').value, link: $('#trLink').value.trim() }); ['#trCompany','#trRole','#trLink'].forEach(id=>$(id).value=''); });
     $('#trExportBtn')?.addEventListener('click', exportTracker);
     $('#trImportInput')?.addEventListener('change', e=>{ if(e.target.files?.[0]) importTracker(e.target.files[0]); e.target.value=''; });
-    $('.filter').forEach(b => b.addEventListener('click', () => {
+    $('#clearWorkspaceBtn')?.addEventListener('click', clearWorkspace);
+    $$('.filter').forEach(b => b.addEventListener('click', () => {
       filter = b.dataset.filter;
       $$('.filter').forEach(x => x.classList.toggle('is-active', x === b));
       loadJobs();
