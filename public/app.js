@@ -661,6 +661,8 @@
   function resetCV() {
     cvGenerated = null; coverGenerated = null;
     const r = $('#cvResult'); if (r) r.hidden = true;
+    const tabs = $('#resultTabs'); if (tabs) tabs.hidden = true;
+    const panels = $('#resultPanels'); if (panels) panels.hidden = true;
     ['#coverResult','#prepResult','#gapResult'].forEach(id=>{ const el=$(id); if(el) el.hidden=true; });
     const s = $('#cvStatus'); if (s) s.textContent = '';
     ['#cvDownloadBtn','#cvPrintBtn','#cvSaveBtn'].forEach(id=>{ const el=$(id); if(el) el.hidden=true; });
@@ -791,7 +793,11 @@
     const gr = (data.guardrails||[]).map(g=>`<li>${esc(g)}</li>`).join('');
     extra.innerHTML = `${ev?'<div class="cv-match-label">'+esc(t('dyn.cvEvidence'))+'</div><ul class="small-list">'+ev+'</ul>':''}${gr?'<div class="cv-match-label">'+esc(t('dyn.cvGuardrails'))+'</div><ul class="small-list">'+gr+'</ul>':''}`;
     $('#cvResult').hidden = false;
-    $('#cvDownloadBtn').hidden = false; $('#cvPrintBtn').hidden = false; $('#cvSaveBtn').hidden = false;
+    $('#resultTabs').hidden = false;
+    $('#resultPanels').hidden = false;
+    // Switch to CV tab
+    $$('.result-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === 'cv'));
+    $$('.result-panel').forEach(p => p.classList.toggle('is-active', p.id === 'panel-cv'));
     $('#cvStatus').textContent = t('dyn.cvReady');
   }
 
@@ -834,6 +840,9 @@
       const res = await fetch('/api/cover-letter', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'', company: $('#cvCompany')?.value||'', lang: $('#cvLang')?.value||'fr' }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errCover'));
       coverGenerated = data; $('#coverText').textContent = data.text || ''; $('#coverResult').hidden = false; $('#cvStatus').textContent = '';
+      $('#resultTabs').hidden = false; $('#resultPanels').hidden = false;
+      $$('.result-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === 'cover'));
+      $$('.result-panel').forEach(p => p.classList.toggle('is-active', p.id === 'panel-cover'));
       flashSuccess($('#cvCoverBtn'), t('dyn.coverDone'));
     } catch(e){ setCvStatus(e.message||t('dyn.errCover'), 'error'); }
   }
@@ -851,6 +860,9 @@
       const sec = (title, items) => '<div class="prep-sec"><h5>'+esc(title)+'</h5>'+items.map(i=>'<div class="prep-q"><strong>'+esc(i.q)+'</strong><div class="muted small-note">'+esc(i.why||'')+'</div><div class="small-note">STAR: '+esc(i.star||'')+'</div></div>').join('')+'</div>';
       $('#prepContent').innerHTML = sec(labels.tech, data.technical||[]) + sec(labels.beh, data.behavioral||[]) + sec(labels.role, data.roleQuestions||[]) + (data.gapsToPrepare?.length?'<div class="prep-sec"><h5>'+esc(labels.gaps)+'</h5><ul class="small-list">'+data.gapsToPrepare.map(g=>'<li>'+esc(g)+'</li>').join('')+'</ul></div>':'');
       $('#prepResult').hidden = false; $('#cvStatus').textContent = '';
+      $('#resultTabs').hidden = false; $('#resultPanels').hidden = false;
+      $$('.result-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === 'prep'));
+      $$('.result-panel').forEach(p => p.classList.toggle('is-active', p.id === 'panel-prep'));
     } catch(e){ setCvStatus(e.message||t('dyn.errPrep'), 'error'); }
   }
   async function generateGap() {
@@ -863,6 +875,9 @@
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errGap'));
       $('#gapContent').innerHTML = (data.roadmap||[]).map(r=>'<div class="prep-q"><strong>'+esc(r.skill)+'</strong><div class="small-note">'+esc(r.action)+'</div><div class="small-note muted">'+esc(r.resource)+'</div><div class="small-note">'+esc(r.project)+'</div><div class="small-note muted">'+esc(r.honest)+'</div></div>').join('') || '<p class="muted">'+esc(t('dyn.noGaps'))+'</p>';
       $('#gapResult').hidden = false; $('#cvStatus').textContent = '';
+      $('#resultTabs').hidden = false; $('#resultPanels').hidden = false;
+      $$('.result-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === 'gap'));
+      $$('.result-panel').forEach(p => p.classList.toggle('is-active', p.id === 'panel-gap'));
     } catch(e){ setCvStatus(e.message||t('dyn.errGap'), 'error'); }
   }
 
@@ -910,6 +925,11 @@
     $('#cvPrepBtn')?.addEventListener('click', generatePrep);
     $('#cvGapBtn')?.addEventListener('click', generateGap);
     $('#cvSaveBtn')?.addEventListener('click', saveCVVersion);
+    // Tab switching
+    $$('.result-tab').forEach(tab => tab.addEventListener('click', () => {
+      $$('.result-tab').forEach(t => t.classList.toggle('is-active', t === tab));
+      $$('.result-panel').forEach(p => p.classList.toggle('is-active', p.id === 'panel-' + tab.dataset.tab));
+    }));
     $('#cvDemoJdBtn')?.addEventListener('click', loadDemoJD);
     $('#cvJdFile')?.addEventListener('change', e => { handleJdFile(e.target.files?.[0]); e.target.value=''; });
     $('#coverCopyBtn')?.addEventListener('click', async ()=>{ try{ await navigator.clipboard.writeText($('#coverText').textContent||''); $('#cvStatus').textContent=t('dyn.copied'); }catch{} });

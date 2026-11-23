@@ -272,32 +272,51 @@
                 <button class="btn btn-ghost" id="cvSaveBtn" type="button" hidden><span data-i18n="cvSaveBtn">Sauver version</span></button>
                 <span class="muted cv-tailor-status" id="cvStatus" aria-live="polite"></span>
               </div>
-              <div class="cv-tailor-result" id="cvResult" hidden>
-                <div class="tool-result-head"><strong data-i18n="cvResultTitle">CV généré</strong><div class="tool-result-actions"><button class="btn btn-ghost btn-sm" data-close="cvResult" type="button" aria-label="Fermer">✕</button></div></div>
-                <div class="cv-match-summary">
-                  <div class="cv-match-kpi"><strong id="cvMatchPct">—</strong><small data-i18n="cvMatchLabel">match ATS</small></div>
-                  <div class="cv-match-cols">
-                    <div><div class="cv-match-label" data-i18n="cvMatched">Mots-clés couverts</div><div class="chips" id="cvMatched"></div></div>
-                    <div><div class="cv-match-label" data-i18n="cvMissing">À renforcer si vrai</div><div class="chips" id="cvMissing"></div></div>
+              <div class="result-tabs" id="resultTabs" hidden>
+                <button class="result-tab is-active" data-tab="cv" type="button"><span data-i18n="cvResultTitle">CV généré</span></button>
+                <button class="result-tab" data-tab="cover" type="button"><span data-i18n="coverTitle">Lettre de motivation</span></button>
+                <button class="result-tab" data-tab="prep" type="button"><span data-i18n="prepTitle">Préparation entretien</span></button>
+                <button class="result-tab" data-tab="gap" type="button"><span data-i18n="gapTitle">Plan de progression</span></button>
+              </div>
+              <div class="result-panels" id="resultPanels" hidden>
+                <div class="result-panel is-active" id="panel-cv">
+                  <div class="cv-tailor-result" id="cvResult">
+                    <div class="cv-match-summary">
+                      <div class="cv-match-kpi"><strong id="cvMatchPct">—</strong><small data-i18n="cvMatchLabel">match ATS</small></div>
+                      <div class="cv-match-cols">
+                        <div><div class="cv-match-label" data-i18n="cvMatched">Mots-clés couverts</div><div class="chips" id="cvMatched"></div></div>
+                        <div><div class="cv-match-label" data-i18n="cvMissing">À renforcer si vrai</div><div class="chips" id="cvMissing"></div></div>
+                      </div>
+                    </div>
+                    <div class="cv-preview-wrap">
+                      <div class="cv-preview-head"><span data-i18n="cvPreview">Aperçu du CV généré</span></div>
+                      <iframe id="cvPreviewFrame" class="cv-preview-frame" title="Aperçu CV" loading="lazy"></iframe>
+                    </div>
+                    <div class="result-actions">
+                      <button class="btn btn-ghost btn-sm" id="cvDownloadBtn" type="button" data-i18n="cvDownload">Télécharger HTML</button>
+                      <button class="btn btn-ghost btn-sm" id="cvPrintBtn" type="button" data-i18n="cvPrint">Imprimer / PDF</button>
+                      <button class="btn btn-ghost btn-sm" id="cvSaveBtn" type="button" data-i18n="cvSaveBtn">Sauver version</button>
+                    </div>
                   </div>
                 </div>
-                <div class="cv-preview-wrap">
-                  <div class="cv-preview-head"><span data-i18n="cvPreview">Aperçu du CV généré</span></div>
-                  <iframe id="cvPreviewFrame" class="cv-preview-frame" title="Aperçu CV" loading="lazy"></iframe>
+                <div class="result-panel" id="panel-cover">
+                  <div class="tool-result" id="coverResult">
+                    <div class="tool-result-head"><strong data-i18n="coverTitle">Lettre de motivation</strong><div class="tool-result-actions"><button class="btn btn-ghost btn-sm" id="coverCopyBtn" type="button" data-i18n="copyText">Copier</button><button class="btn btn-ghost btn-sm" id="coverDownloadBtn" type="button" data-i18n="cvDownload">Télécharger HTML</button></div></div>
+                    <pre id="coverText" class="tool-pre"></pre>
+                  </div>
                 </div>
-              </div>
-
-              <div class="tool-result" id="coverResult" hidden>
-                <div class="tool-result-head"><strong data-i18n="coverTitle">Lettre de motivation</strong><div class="tool-result-actions"><button class="btn btn-ghost btn-sm" id="coverCopyBtn" type="button" data-i18n="copyText">Copier</button><button class="btn btn-ghost btn-sm" id="coverDownloadBtn" type="button" data-i18n="cvDownload">Télécharger HTML</button><button class="btn btn-ghost btn-sm" data-close="coverResult" type="button" aria-label="Fermer">✕</button></div></div>
-                <pre id="coverText" class="tool-pre"></pre>
-              </div>
-              <div class="tool-result" id="prepResult" hidden>
-                <div class="tool-result-head"><strong data-i18n="prepTitle">Préparation entretien</strong><div class="tool-result-actions"><button class="btn btn-ghost btn-sm" data-close="prepResult" type="button" aria-label="Fermer">✕</button></div></div>
-                <div id="prepContent" class="tool-content"></div>
-              </div>
-              <div class="tool-result" id="gapResult" hidden>
-                <div class="tool-result-head"><strong data-i18n="gapTitle">Plan de progression</strong><div class="tool-result-actions"><button class="btn btn-ghost btn-sm" data-close="gapResult" type="button" aria-label="Fermer">✕</button></div></div>
-                <div id="gapContent" class="tool-content"></div>
+                <div class="result-panel" id="panel-prep">
+                  <div class="tool-result" id="prepResult">
+                    <div class="tool-result-head"><strong data-i18n="prepTitle">Préparation entretien</strong></div>
+                    <div id="prepContent" class="tool-content"></div>
+                  </div>
+                </div>
+                <div class="result-panel" id="panel-gap">
+                  <div class="tool-result" id="gapResult">
+                    <div class="tool-result-head"><strong data-i18n="gapTitle">Plan de progression</strong></div>
+                    <div id="gapContent" class="tool-content"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
