@@ -326,6 +326,10 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
   .step-n{font-size:2rem}
 }
 @media(max-width:768px){
+  .float-chip.c1{top:30px;right:4%}
+  .float-chip.c2{top:90px;left:2%}
+  .float-chip.c3{bottom:70px;left:4%}
+  .float-chip.c4{bottom:28px;right:4%}
   .wrap{width:calc(100% - 32px)}
   .nav{padding-inline:16px;gap:12px;flex-wrap:wrap}
   .nav-links{order:3;width:100%;justify-content:center;margin:6px 0 0;gap:18px}
@@ -343,7 +347,11 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 }
 @media(max-width:480px){
   .hero h1{font-size:clamp(2.1rem,8.4vw,2.8rem)}
-  .hero-visual{height:280px}
+  .hero-visual{height:260px}
+  .float-chip.c1{top:20px;right:4%}
+  .float-chip.c2{top:60px;left:2%}
+  .float-chip.c3{bottom:60px;left:4%}
+  .float-chip.c4{bottom:20px;right:4%}
   .stepper{flex-direction:column;align-items:stretch;gap:4px}
   .stepper i{display:none}
   .step-pill{justify-content:flex-start;padding:8px 12px}
