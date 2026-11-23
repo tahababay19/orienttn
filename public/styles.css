@@ -424,10 +424,10 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 .ol-mini{display:flex; flex-direction:column; align-items:center; gap:8px; margin-bottom:8px}
 .ol-mini-bars{display:flex; align-items:flex-end; gap:5px; height:32px}
 .ol-mini-bars b{display:block; width:8px; border-radius:3px; transform-origin:50% 100%;
-  transform:skewX(-8deg) scaleY(.3); animation:ol-grow 1.5s cubic-bezier(.45,0,.2,1) infinite}
+  transform:skewX(-8deg) scaleY(.3); animation:ol-grow 3s cubic-bezier(.45,0,.2,1) infinite}
 .ol-mini-bars b:nth-child(1){height:17px; background:var(--secondary)}
-.ol-mini-bars b:nth-child(2){height:32px; background:var(--primary); animation-delay:.18s}
-.ol-mini-bars b:nth-child(3){height:24px; background:var(--accent); animation-delay:.36s}
+.ol-mini-bars b:nth-child(2){height:32px; background:var(--primary); animation-delay:.36s}
+.ol-mini-bars b:nth-child(3){height:24px; background:var(--accent); animation-delay:.72s}
 .ol-mini-word{font-size:14px; font-weight:700; letter-spacing:-.02em; color:var(--primary)}
 .ol-mini-word span{color:var(--secondary)}
 @media (prefers-reduced-motion:reduce){.ol-mini-bars b{animation:none; transform:skewX(-8deg) scaleY(1)}}
