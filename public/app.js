@@ -690,7 +690,7 @@
     cvVersions.unshift({ title, date: new Date().toISOString().slice(0,10), match: cvGenerated.match?.pct, html: cvGenerated.html, filename: cvGenerated.filename, matchData: cvGenerated.match, evidence: cvGenerated.evidence, guardrails: cvGenerated.guardrails });
     cvVersions = cvVersions.slice(0,12);
     saveJSON(VERSIONS_KEY, cvVersions); renderVersions();
-    $('#cvStatus').textContent = t('dyn.cvSaved');
+    setCvStatus(t('dyn.cvSaved'), 'success');
   }
   function exportTracker() {
     const blob = new Blob([JSON.stringify({ tracker, cvVersions: cvVersions.map(v=>({...v, html: undefined})) }, null, 2)], {type:'application/json'});
@@ -729,13 +729,13 @@
     const cc = $('#cvCompany'); if (cc) cc.value = '';
     $('#jobs').innerHTML = ''; $('#jobPortals').innerHTML = '';
     maxStep = 1; goStep(1, true);
-    $('#cvStatus').textContent = t('dyn.workspaceCleared');
+    setCvStatus(t('dyn.workspaceCleared'), 'success');
   }
 
   async function handleJdFile(file) {
     if (!file) return;
     if (!/\.(pdf|docx|txt|md)$/i.test(file.name)) { $('#cvStatus').textContent = t('dyn.errFormat'); return; }
-    $('#cvStatus').textContent = '...';
+    setCvStatus('...', '')
     try {
       if (/\.(txt|md)$/i.test(file.name)) {
         const text = await file.text();
@@ -777,40 +777,47 @@
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ' + esc(label);
     setTimeout(() => { btn.classList.remove('btn-success'); btn.innerHTML = orig; }, 2200);
   }
+  function setCvStatus(msg, type) {
+    const el = $('#cvStatus'); if (!el) return;
+    el.textContent = msg || '';
+    el.classList.remove('is-error','is-success');
+    if (type === 'error') el.classList.add('is-error');
+    else if (type === 'success') el.classList.add('is-success');
+  }
   async function generateCV() {
-    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
+    if (!profile) { setCvStatus(t('dyn.errCvProfile'), 'error'); return; }
     const jdText = ($('#cvJd')?.value || '').trim();
     const jdTitle = ($('#cvRole')?.value || '').trim();
     const lang = ($('#cvLang')?.value || 'fr');
-    if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    if (jdText.length < 40) { setCvStatus(t('dyn.errCvNeed'), 'error'); return; }
     const btn = $('#cvGenerateBtn'); btn.disabled = true; btn.style.opacity = '.6';
-    $('#cvStatus').textContent = t('dyn.cvGenerating'); $('#cvResult').hidden = true;
+    setCvStatus(t('dyn.cvGenerating'), ''); $('#cvResult').hidden = true;
     try {
       const res = await fetch('/api/cv', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle, lang }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || t('dyn.errCvGen'));
       renderCVResult(data);
       flashSuccess(btn, t('dyn.cvDone'));
-    } catch (e) { $('#cvStatus').textContent = e.message || t('dyn.errCvGen'); }
+    } catch (e) { setCvStatus(e.message || t('dyn.errCvGen'), 'error'); }
     finally { btn.disabled = false; btn.style.opacity = ''; }
   }
 
   async function generateCoverLetter() {
-    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
-    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
-    $('#cvStatus').textContent = '...';
+    if (!profile) { setCvStatus(t('dyn.errCvProfile'), 'error'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { setCvStatus(t('dyn.errCvNeed'), 'error'); return; }
+    setCvStatus('...', '')
     try {
       const res = await fetch('/api/cover-letter', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'', company: $('#cvCompany')?.value||'', lang: $('#cvLang')?.value||'fr' }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errCover'));
       coverGenerated = data; $('#coverText').textContent = data.text || ''; $('#coverResult').hidden = false; $('#cvStatus').textContent = '';
       flashSuccess($('#cvCoverBtn'), t('dyn.coverDone'));
-    } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errCover'); }
+    } catch(e){ setCvStatus(e.message||t('dyn.errCover'), 'error'); }
   }
   async function generatePrep() {
-    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
-    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    if (!profile) { setCvStatus(t('dyn.errCvProfile'), 'error'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { setCvStatus(t('dyn.errCvNeed'), 'error'); return; }
     const lang = ($('#cvLang')?.value || 'fr');
-    $('#cvStatus').textContent = '...';
+    setCvStatus('...', '')
     try {
       const res = await fetch('/api/interview-prep', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'', lang }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errPrep'));
@@ -820,19 +827,19 @@
       const sec = (title, items) => '<div class="prep-sec"><h5>'+esc(title)+'</h5>'+items.map(i=>'<div class="prep-q"><strong>'+esc(i.q)+'</strong><div class="muted small-note">'+esc(i.why||'')+'</div><div class="small-note">STAR: '+esc(i.star||'')+'</div></div>').join('')+'</div>';
       $('#prepContent').innerHTML = sec(labels.tech, data.technical||[]) + sec(labels.beh, data.behavioral||[]) + sec(labels.role, data.roleQuestions||[]) + (data.gapsToPrepare?.length?'<div class="prep-sec"><h5>'+esc(labels.gaps)+'</h5><ul class="small-list">'+data.gapsToPrepare.map(g=>'<li>'+esc(g)+'</li>').join('')+'</ul></div>':'');
       $('#prepResult').hidden = false; $('#cvStatus').textContent = '';
-    } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errPrep'); }
+    } catch(e){ setCvStatus(e.message||t('dyn.errPrep'), 'error'); }
   }
   async function generateGap() {
-    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
-    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    if (!profile) { setCvStatus(t('dyn.errCvProfile'), 'error'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { setCvStatus(t('dyn.errCvNeed'), 'error'); return; }
     const lang = ($('#cvLang')?.value || 'fr');
-    $('#cvStatus').textContent = '...';
+    setCvStatus('...', '')
     try {
       const res = await fetch('/api/gap-roadmap', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, lang }) });
       const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errGap'));
       $('#gapContent').innerHTML = (data.roadmap||[]).map(r=>'<div class="prep-q"><strong>'+esc(r.skill)+'</strong><div class="small-note">'+esc(r.action)+'</div><div class="small-note muted">'+esc(r.resource)+'</div><div class="small-note">'+esc(r.project)+'</div><div class="small-note muted">'+esc(r.honest)+'</div></div>').join('') || '<p class="muted">'+esc(t('dyn.noGaps'))+'</p>';
       $('#gapResult').hidden = false; $('#cvStatus').textContent = '';
-    } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errGap'); }
+    } catch(e){ setCvStatus(e.message||t('dyn.errGap'), 'error'); }
   }
 
   function downloadCV() {

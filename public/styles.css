@@ -400,7 +400,9 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 .small-list li{margin:3px 0}
 .cv-extra{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);display:grid;gap:4px}
 .cv-extra .cv-match-label{margin-top:6px}
-.cv-tailor-status{min-height:1.4em;font-size:.84rem}
+.cv-tailor-status{min-height:1.4em;font-size:.84rem;padding:8px 12px;border-radius:8px;transition:background .2s,color .2s}
+.cv-tailor-status.is-error{background:#fef2f2;color:#dc2626;font-weight:600;border:1px solid #fecaca}
+.cv-tailor-status.is-success{background:#f0fdf4;color:#15803d;font-weight:600;border:1px solid #bbf7d0}
 .danger-ghost{color:#b91c1c !important;border-color:#fecaca !important}
 .danger-ghost:hover{background:#fff1f2 !important;border-color:#fca5a5 !important;color:#991b1b !important}
 
