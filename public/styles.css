@@ -232,8 +232,9 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 .ring>div{width:84px;height:84px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .ring strong{font-size:1.4rem;color:var(--primary);line-height:1}
 .ring small{font-size:.64rem;color:var(--muted-fg)}
-.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;transition:box-shadow .3s,transform .3s var(--ease)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:1100px){.result-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:14px;transition:box-shadow .3s,transform .3s var(--ease)}
 .card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
 .card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .card-head h4{font-size:1.12rem;color:var(--primary)}
@@ -281,7 +282,7 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 .subhead{font-size:1.15rem;color:var(--primary);margin:0 0 16px;display:flex;align-items:center;gap:10px}
 .live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.15);animation:pulse 2s infinite}
 .jobs{display:grid;gap:12px}
-.job{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.job{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
 .job:hover{transform:translateX(4px);box-shadow:var(--shadow-md);border-color:#bfdbfe}
 [dir="rtl"] .job:hover{transform:translateX(-4px)}
 .job h5{margin:0 0 4px;font-size:1rem;font-family:var(--sans);font-weight:700;color:var(--fg)}
