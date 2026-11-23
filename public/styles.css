@@ -420,6 +420,18 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 @media(max-width:900px){.tracker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.tracker-grid,.tracker-lists{grid-template-columns:1fr}.tool-result-head{flex-direction:column;align-items:flex-start}.cv-tailor-actions .btn{width:100%}}
 
+/* ===== orient.tn mini loader (in-app) ===== */
+.ol-mini{display:flex; flex-direction:column; align-items:center; gap:8px; margin-bottom:8px}
+.ol-mini-bars{display:flex; align-items:flex-end; gap:5px; height:32px}
+.ol-mini-bars b{display:block; width:8px; border-radius:3px; transform-origin:50% 100%;
+  transform:skewX(-8deg) scaleY(.3); animation:ol-grow 1.5s cubic-bezier(.45,0,.2,1) infinite}
+.ol-mini-bars b:nth-child(1){height:17px; background:var(--secondary)}
+.ol-mini-bars b:nth-child(2){height:32px; background:var(--primary); animation-delay:.18s}
+.ol-mini-bars b:nth-child(3){height:24px; background:var(--accent); animation-delay:.36s}
+.ol-mini-word{font-size:14px; font-weight:700; letter-spacing:-.02em; color:var(--primary)}
+.ol-mini-word span{color:var(--secondary)}
+@media (prefers-reduced-motion:reduce){.ol-mini-bars b{animation:none; transform:skewX(-8deg) scaleY(1)}}
+
 /* ===== orient.tn loader ===== */
 :root{
   --ol-navy:#1e3157; --ol-blue:#2f5fe0; --ol-green:#3f9b4f;
