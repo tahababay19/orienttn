@@ -377,3 +377,32 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 .cv-preview-head{padding:10px 12px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);background:#f8fafc}
 .cv-preview-frame{width:100%;height:720px;border:0;background:#f3f4f6}
 @media (max-width:720px){.cv-match-summary{grid-template-columns:1fr}.cv-preview-frame{height:560px}}
+
+/* Tool results / tracker / career features */
+.tool-result{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px}
+.tool-result-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.tool-result-head strong{color:var(--primary);font-size:1rem}
+.tool-result-actions{display:flex;gap:8px;flex-wrap:wrap}
+.tool-pre{margin:0;white-space:pre-wrap;word-break:break-word;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px;max-height:420px;overflow:auto}
+.tool-content{display:grid;gap:12px}
+.prep-sec h5{margin:0 0 8px;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--secondary)}
+.prep-q{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f8fafc;margin-bottom:8px}
+.prep-q strong{display:block;font-size:.88rem;color:var(--fg);margin-bottom:2px}
+.small-note{font-size:.78rem;line-height:1.45}
+.small-list{margin:6px 0 0;padding-left:18px;font-size:.8rem;color:var(--muted-fg)}
+.small-list li{margin:2px 0}
+.cv-extra{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.cv-extra .cv-match-label{margin-top:6px}
+
+.tracker-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
+.tracker-lists{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.tracker-list{display:grid;gap:8px;margin-top:8px}
+.tracker-item{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:.85rem}
+.tracker-item strong{color:var(--primary)}
+.btn-sm{padding:6px 10px;font-size:.76rem;border-radius:8px}
+
+.job-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px}
+.job-tailor{padding:5px 10px;font-size:.74rem}
+
+@media(max-width:900px){.tracker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.tracker-grid,.tracker-lists{grid-template-columns:1fr}.tool-result-head{flex-direction:column;align-items:flex-start}}

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.mjs",
     "dev": "node --watch server.mjs",
-    "check": "node --check server.mjs && node --check lib/profile.mjs && node --check lib/jobs.mjs && node --check lib/ai.mjs && node --check lib/cv.mjs && node --check lib/handlers.mjs && node --check api/analyze.js && node --check api/jobs.js && node --check api/health.js && node --check api/cv.js && node --check public/app.js"
+    "check": "node --check server.mjs && node --check lib/profile.mjs && node --check lib/jobs.mjs && node --check lib/ai.mjs && node --check lib/cv.mjs && node --check lib/career.mjs && node --check lib/handlers.mjs && node --check api/analyze.js && node --check api/jobs.js && node --check api/health.js && node --check api/cv.js && node --check api/extract.js && node --check api/cover-letter.js && node --check api/interview-prep.js && node --check api/gap-roadmap.js && node --check public/app.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.12.0",

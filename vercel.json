@@ -9,6 +9,10 @@
     { "src": "/api/analyze", "dest": "/api/analyze.js" },
     { "src": "/api/jobs", "dest": "/api/jobs.js" },
     { "src": "/api/cv", "dest": "/api/cv.js" },
+    { "src": "/api/extract", "dest": "/api/extract.js" },
+    { "src": "/api/cover-letter", "dest": "/api/cover-letter.js" },
+    { "src": "/api/interview-prep", "dest": "/api/interview-prep.js" },
+    { "src": "/api/gap-roadmap", "dest": "/api/gap-roadmap.js" },
     { "src": "/", "dest": "/public/index.html" },
     { "src": "/(.*)", "dest": "/public/$1" }
   ]

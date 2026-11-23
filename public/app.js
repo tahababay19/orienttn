@@ -53,6 +53,11 @@
       cvPreview: 'Aperçu du CV généré',
       cvMatched: 'Mots-clés couverts',
       cvMissing: 'À renforcer si vrai',
+      cvCompanyLabel: 'Entreprise (optionnel)', cvLangLabel: 'Langue du CV', cvJdFileLabel: 'Ou importer la JD (PDF/DOCX/TXT)',
+      cvCoverBtn: 'Lettre de motivation', cvPrepBtn: 'Préparation entretien', cvGapBtn: 'Plan de progression', cvSaveBtn: 'Sauver version',
+      coverTitle: 'Lettre de motivation', prepTitle: 'Préparation entretien', gapTitle: 'Plan de progression', copyText: 'Copier',
+      trackerKicker: 'SUIVI LOCAL', trackerTitle: 'Suivi des candidatures & versions CV', trackerSub: 'Stocké localement dans votre navigateur. Exportez/importez en JSON.',
+      trCompany: 'Entreprise', trRole: 'Poste', trStatus: 'Statut', trLink: 'Lien', trAdd: 'Ajouter au suivi', trExport: 'Exporter JSON', trImport: 'Importer JSON', trList: 'Candidatures', cvVersions: 'Versions CV',
       dyn: {
         candidate: 'Candidat', years: 'années d’expérience estimées', level: 'Niveau',
         entry: 'Débutant', mid: 'Intermédiaire', senior: 'Senior',
@@ -72,6 +77,19 @@
         errCvGen: 'Impossible de générer le CV pour le moment.',
         cvGenerating: 'Génération du CV…',
         cvReady: 'CV adapté généré — vous pouvez le télécharger ou l’imprimer en PDF.',
+        errCover: 'Impossible de générer la lettre de motivation.',
+        errPrep: 'Impossible de générer la préparation entretien.',
+        errGap: 'Impossible de générer le plan de progression.',
+        cvSaved: 'Version CV sauvegardée localement.',
+        copied: 'Copié.',
+        trackerEmpty: 'Aucune candidature suivie.',
+        versionsEmpty: 'Aucune version sauvegardée.',
+        tailorJob: 'Adapter mon CV',
+        loadVersion: 'Charger',
+        cvEvidence: 'Preuves',
+        cvGuardrails: 'Garde-fous',
+        noGaps: 'Aucun écart majeur détecté.',
+
         restored: 'Profil restauré',
         engineAi: 'Analyse IA', engineHeuristic: 'Lecture locale',
         engineFallback: 'Analyse IA indisponible — lecture locale utilisée.',
@@ -125,6 +143,11 @@
       cvPreview: 'Generated CV preview',
       cvMatched: 'Matched keywords',
       cvMissing: 'Strengthen if true',
+      cvCompanyLabel: 'Company (optional)', cvLangLabel: 'CV language', cvJdFileLabel: 'Or import JD (PDF/DOCX/TXT)',
+      cvCoverBtn: 'Cover letter', cvPrepBtn: 'Interview prep', cvGapBtn: 'Gap roadmap', cvSaveBtn: 'Save version',
+      coverTitle: 'Cover letter', prepTitle: 'Interview preparation', gapTitle: 'Gap roadmap', copyText: 'Copy',
+      trackerKicker: 'LOCAL TRACKER', trackerTitle: 'Application tracker & CV versions', trackerSub: 'Stored locally in your browser. Export/import JSON.',
+      trCompany: 'Company', trRole: 'Role', trStatus: 'Status', trLink: 'Link', trAdd: 'Add to tracker', trExport: 'Export JSON', trImport: 'Import JSON', trList: 'Applications', cvVersions: 'CV versions',
       dyn: {
         candidate: 'Candidate', years: 'years of experience estimated', level: 'Level',
         entry: 'Entry', mid: 'Mid-level', senior: 'Senior',
@@ -144,6 +167,19 @@
         errCvGen: 'Could not generate the CV right now.',
         cvGenerating: 'Generating CV…',
         cvReady: 'Tailored CV generated — you can download it or print to PDF.',
+        errCover: 'Could not generate cover letter.',
+        errPrep: 'Could not generate interview prep.',
+        errGap: 'Could not generate gap roadmap.',
+        cvSaved: 'CV version saved locally.',
+        copied: 'Copied.',
+        trackerEmpty: 'No tracked applications.',
+        versionsEmpty: 'No saved versions.',
+        tailorJob: 'Tailor my CV',
+        loadVersion: 'Load',
+        cvEvidence: 'Evidence',
+        cvGuardrails: 'Guardrails',
+        noGaps: 'No major gaps detected.',
+
         restored: 'Profile restored',
         engineAi: 'AI analysis', engineHeuristic: 'Local analysis',
         engineFallback: 'AI unavailable — local analysis used.',
@@ -197,6 +233,11 @@
       cvPreview: 'معاينة السيرة الذاتية',
       cvMatched: 'الكلمات المفتاحية المطابقة',
       cvMissing: 'للتعزيز إذا كان صحيحاً',
+      cvCompanyLabel: 'الشركة (اختياري)', cvLangLabel: 'لغة السيرة الذاتية', cvJdFileLabel: 'أو استيراد وصف الوظيفة (PDF/DOCX/TXT)',
+      cvCoverBtn: 'خطاب التحفيز', cvPrepBtn: 'تحضير المقابلة', cvGapBtn: 'خطة التطوير', cvSaveBtn: 'حفظ النسخة',
+      coverTitle: 'خطاب التحفيز', prepTitle: 'تحضير المقابلة', gapTitle: 'خطة التطوير', copyText: 'نسخ',
+      trackerKicker: 'تتبع محلي', trackerTitle: 'تتبع الترشيحات ونسخ السيرة الذاتية', trackerSub: 'محفوظ محلياً في متصفحك. تصدير/استيراد JSON.',
+      trCompany: 'الشركة', trRole: 'الوظيفة', trStatus: 'الحالة', trLink: 'الرابط', trAdd: 'إضافة للتتبع', trExport: 'تصدير JSON', trImport: 'استيراد JSON', trList: 'الترشيحات', cvVersions: 'نسخ السيرة الذاتية',
       dyn: {
         candidate: 'مُرشّح', years: 'سنة خبرة مقدّرة', level: 'المستوى',
         entry: 'مبتدئ', mid: 'متوسط', senior: 'خبير',
@@ -216,6 +257,19 @@
         errCvGen: 'تعذّر إنشاء السيرة الذاتية الآن.',
         cvGenerating: 'جارٍ إنشاء السيرة الذاتية…',
         cvReady: 'تم إنشاء السيرة الذاتية المكيّفة — يمكنك تحميلها أو طباعتها كـ PDF.',
+        errCover: 'تعذر إنشاء خطاب التحفيز.',
+        errPrep: 'تعذر إنشاء تحضير المقابلة.',
+        errGap: 'تعذر إنشاء خطة التطوير.',
+        cvSaved: 'تم حفظ نسخة السيرة الذاتية محلياً.',
+        copied: 'تم النسخ.',
+        trackerEmpty: 'لا توجد ترشيحات متتبعة.',
+        versionsEmpty: 'لا توجد نسخ محفوظة.',
+        tailorJob: 'كيّف سيرتي الذاتية',
+        loadVersion: 'تحميل',
+        cvEvidence: 'الأدلة',
+        cvGuardrails: 'ضوابط',
+        noGaps: 'لم يتم اكتشاف فجوات كبيرة.',
+
         restored: 'تمت استعادة الملف',
         engineAi: 'تحليل بالذكاء الاصطناعي', engineHeuristic: 'تحليل محلي',
         engineFallback: 'تعذّر التحليل بالذكاء الاصطناعي — تم استخدام التحليل المحلي.',
@@ -230,7 +284,13 @@
   let lang = 'fr';
   let profile = null, jobsData = null, fileData = null;
   let filter = 'Tous', maxStep = 1, busy = false;
-  let cvGenerated = null;
+  let cvGenerated = null, coverGenerated = null;
+  const TRACK_KEY = 'orient-tn-tracker-v1';
+  const VERSIONS_KEY = 'orient-tn-cv-versions-v1';
+  const loadJSON = (k, fb) => { try { return JSON.parse(localStorage.getItem(k) || '') ?? fb; } catch { return fb; } };
+  const saveJSON = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+  let tracker = loadJSON(TRACK_KEY, []);
+  let cvVersions = loadJSON(VERSIONS_KEY, []);
   const PROFILE_KEY = 'orient-tn-profile';
 
   const dict = () => I18N[lang];
@@ -274,6 +334,8 @@
     translateOptions($('#availability'), 'availability');
     if (profile) renderProfile();
     if (jobsData) renderJobs();
+    renderTracker();
+    renderVersions();
   }
 
   /* ---------- motion ---------- */
@@ -479,7 +541,10 @@
             <span>${esc(j.source)}</span><span>${esc(j.contract)}</span>
           </div>
           ${(j.reasons || []).length ? `<div class="job-reasons">${j.reasons.map(r => esc(reasonText(r))).join(' · ')}</div>` : ''}
-          <a class="job-ext" href="${esc(j.url)}" target="_blank" rel="noopener noreferrer">${esc(dy.view)}<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+          <div class="job-actions">
+            <a class="job-ext" href="${esc(j.url)}" target="_blank" rel="noopener noreferrer">${esc(dy.view)}<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <button class="btn btn-ghost btn-sm job-tailor" type="button" data-job-idx="${jobs.indexOf(j)}">${esc(dy.tailorJob)}</button>
+          </div>
         </div>
         <div class="job-score">
           <b style="--v:${j.score};--sc:${color}"><span>${j.score}</span></b>
@@ -488,6 +553,16 @@
       </article>`;
     }).join('') : `<p class="notice">${esc(dy.noJobs)}</p>`;
 
+    $('#jobs .job-tailor').forEach(btn => btn.addEventListener('click', () => {
+      const j = (jobsData.jobs||[])[Number(btn.dataset.jobIdx)];
+      if (!j) return;
+      $('#cvRole').value = j.title || '';
+      $('#cvCompany').value = j.company || '';
+      const jdStub = [j.title, j.company ? 'Company: '+j.company : '', j.location ? 'Location: '+j.location : '', j.contract ? 'Contract: '+j.contract : '', j.url ? 'URL: '+j.url : '', j.reasons?.length ? 'Match reasons: '+j.reasons.join(', ') : '', '', 'Collez la description complète du poste ici pour un meilleur résultat.'].filter(Boolean).join('\n');
+      const jd = $('#cvJd'); if (jd && jd.value.trim().length < 40) jd.value = jdStub;
+      goStep(2);
+      setTimeout(()=>$('#cvTailor')?.scrollIntoView({behavior:'smooth',block:'start'}), 150);
+    }));
     const notice = $('#jobsNotice');
     notice.textContent = jobsData.notice || '';
     notice.hidden = !jobsData.notice;
@@ -515,15 +590,19 @@
   }
 
   function resetCV() {
-    cvGenerated = null;
+    cvGenerated = null; coverGenerated = null;
     const r = $('#cvResult'); if (r) r.hidden = true;
+    ['#coverResult','#prepResult','#gapResult'].forEach(id=>{ const el=$(id); if(el) el.hidden=true; });
     const s = $('#cvStatus'); if (s) s.textContent = '';
-    const d = $('#cvDownloadBtn'); if (d) d.hidden = true;
-    const p = $('#cvPrintBtn'); if (p) p.hidden = true;
+    ['#cvDownloadBtn','#cvPrintBtn','#cvSaveBtn'].forEach(id=>{ const el=$(id); if(el) el.hidden=true; });
     const f = $('#cvPreviewFrame'); if (f) f.removeAttribute('srcdoc');
     const m = $('#cvMatched'); if (m) m.innerHTML = '';
     const x = $('#cvMissing'); if (x) x.innerHTML = '';
     const pct = $('#cvMatchPct'); if (pct) pct.textContent = '0%';
+    const eg = $('#cvEvidenceGuard'); if (eg) eg.innerHTML = '';
+    const ct = $('#coverText'); if (ct) ct.textContent = '';
+    const pc = $('#prepContent'); if (pc) pc.innerHTML = '';
+    const gc = $('#gapContent'); if (gc) gc.innerHTML = '';
   }
 
   function restart() {
@@ -540,23 +619,75 @@
     goStep(1, true);
   }
 
+
+  /* ---------- tracker & CV versions (localStorage) ---------- */
+  function renderTracker() {
+    const el = $('#trackerList'); if (!el) return;
+    if (!tracker.length) { el.innerHTML = '<p class="muted small-note">'+esc(t('dyn.trackerEmpty'))+'</p>'; }
+    else el.innerHTML = tracker.map((it,i)=>`<div class="tracker-item"><div><strong>${esc(it.company||'—')}</strong> <span class="muted">${esc(it.role||'')}</span><div class="muted small-note">${esc(it.status||'Saved')} ${it.date? '· '+esc(it.date):''} ${it.link? '· <a href="'+esc(it.link)+'" target="_blank" rel="noopener">link</a>':''}</div></div><button class="btn btn-ghost btn-sm" data-tr-del="${i}">×</button></div>`).join('');
+    el.querySelectorAll('[data-tr-del]').forEach(b=>b.addEventListener('click',()=>{ tracker.splice(Number(b.dataset.trDel),1); saveJSON(TRACK_KEY,tracker); renderTracker(); }));
+  }
+  function renderVersions() {
+    const el = $('#cvVersions'); if (!el) return;
+    if (!cvVersions.length) { el.innerHTML = '<p class="muted small-note">'+esc(t('dyn.versionsEmpty'))+'</p>'; }
+    else el.innerHTML = cvVersions.map((v,i)=>`<div class="tracker-item"><div><strong>${esc(v.title||'CV')}</strong><div class="muted small-note">${esc(v.date||'')} ${v.match? '· '+v.match+'%':''}</div></div><div style="display:flex;gap:6px"><button class="btn btn-ghost btn-sm" data-v-load="${i}">${esc(t('dyn.loadVersion'))}</button><button class="btn btn-ghost btn-sm" data-v-del="${i}">×</button></div></div>`).join('');
+    el.querySelectorAll('[data-v-del]').forEach(b=>b.addEventListener('click',()=>{ cvVersions.splice(Number(b.dataset.vDel),1); saveJSON(VERSIONS_KEY,cvVersions); renderVersions(); }));
+    el.querySelectorAll('[data-v-load]').forEach(b=>b.addEventListener('click',()=>{ const v=cvVersions[Number(b.dataset.vLoad)]; if(v?.html){ const data={...v, match: v.matchData || (typeof v.match==='object'?v.match:{pct:Number(v.match)||0})}; cvGenerated=data; renderCVResult(data); $('#cvStatus').textContent=''; } }));
+  }
+  function addTrackerItem(item) { tracker.unshift({ ...item, date: new Date().toISOString().slice(0,10) }); tracker = tracker.slice(0,50); saveJSON(TRACK_KEY,tracker); renderTracker(); }
+  function saveCVVersion() {
+    if (!cvGenerated?.html) return;
+    const title = ($('#cvRole')?.value || cvGenerated.headline || 'CV').slice(0,80);
+    cvVersions.unshift({ title, date: new Date().toISOString().slice(0,10), match: cvGenerated.match?.pct, html: cvGenerated.html, filename: cvGenerated.filename, matchData: cvGenerated.match, evidence: cvGenerated.evidence, guardrails: cvGenerated.guardrails });
+    cvVersions = cvVersions.slice(0,12);
+    saveJSON(VERSIONS_KEY, cvVersions); renderVersions();
+    $('#cvStatus').textContent = t('dyn.cvSaved');
+  }
+  function exportTracker() {
+    const blob = new Blob([JSON.stringify({ tracker, cvVersions: cvVersions.map(v=>({...v, html: undefined})) }, null, 2)], {type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='orienttn-tracker.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }
+  function importTracker(file) {
+    const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(String(r.result||'{}')); if(Array.isArray(d.tracker)) tracker=d.tracker.slice(0,50); if(Array.isArray(d.cvVersions)) cvVersions=d.cvVersions.slice(0,12); saveJSON(TRACK_KEY,tracker); saveJSON(VERSIONS_KEY,cvVersions); renderTracker(); renderVersions(); }catch{} };
+    r.readAsText(file);
+  }
+
+  async function handleJdFile(file) {
+    if (!file) return;
+    if (!/\.(pdf|docx|txt|md)$/i.test(file.name)) { $('#cvStatus').textContent = t('dyn.errFormat'); return; }
+    $('#cvStatus').textContent = '...';
+    try {
+      if (/\.(txt|md)$/i.test(file.name)) {
+        const text = await file.text();
+        $('#cvJd').value = text.slice(0, 30000);
+        $('#cvStatus').textContent = '';
+        return;
+      }
+      const data = await new Promise((res, rej) => { const r=new FileReader(); r.onload=()=>res(String(r.result).split(',')[1]||''); r.onerror=rej; r.readAsDataURL(file); });
+      const resp = await fetch('/api/extract', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ file: { name: file.name, data } }) });
+      const out = await resp.json();
+      if (!resp.ok) throw new Error(out.error || 'Extract failed');
+      $('#cvJd').value = out.text || '';
+      $('#cvStatus').textContent = '';
+    } catch (e) { $('#cvStatus').textContent = e.message || 'Extract failed'; }
+  }
+
   /* ---------- CV generation (local, no external API) ---------- */
   function renderCVResult(data) {
     cvGenerated = data;
     $('#cvMatchPct').textContent = `${Number(data.match?.pct || 0)}%`;
     const matched = data.match?.matched || [];
     const missing = data.match?.missing || [];
-    $('#cvMatched').innerHTML = matched.length
-      ? matched.map(s => `<span class="chip hit">${esc(s)}</span>`).join('')
-      : `<span class="empty">${esc(t('dyn.none'))}</span>`;
-    $('#cvMissing').innerHTML = missing.length
-      ? missing.map(s => `<span class="chip gap">${esc(s)}</span>`).join('')
-      : `<span class="empty">${esc(t('dyn.none'))}</span>`;
-    const frame = $('#cvPreviewFrame');
-    if (frame) frame.srcdoc = data.html || '';
+    $('#cvMatched').innerHTML = matched.length ? matched.map(s => `<span class="chip hit">${esc(s)}</span>`).join('') : `<span class="empty">${esc(t('dyn.none'))}</span>`;
+    $('#cvMissing').innerHTML = missing.length ? missing.map(s => `<span class="chip gap">${esc(s)}</span>`).join('') : `<span class="empty">${esc(t('dyn.none'))}</span>`;
+    const frame = $('#cvPreviewFrame'); if (frame) frame.srcdoc = data.html || '';
+    let extra = $('#cvEvidenceGuard');
+    if (!extra) { extra = document.createElement('div'); extra.id='cvEvidenceGuard'; extra.className='cv-extra'; $('#cvResult .cv-match-summary')?.appendChild(extra); }
+    const ev = (data.evidence||[]).slice(0,6).map(e=>`<li><strong>${esc(e.skill)}</strong>: ${esc((e.foundIn||[]).join(', ')||'profile')}</li>`).join('');
+    const gr = (data.guardrails||[]).map(g=>`<li>${esc(g)}</li>`).join('');
+    extra.innerHTML = `${ev?'<div class="cv-match-label">'+esc(t('dyn.cvEvidence'))+'</div><ul class="small-list">'+ev+'</ul>':''}${gr?'<div class="cv-match-label">'+esc(t('dyn.cvGuardrails'))+'</div><ul class="small-list">'+gr+'</ul>':''}`;
     $('#cvResult').hidden = false;
-    $('#cvDownloadBtn').hidden = false;
-    $('#cvPrintBtn').hidden = false;
+    $('#cvDownloadBtn').hidden = false; $('#cvPrintBtn').hidden = false; $('#cvSaveBtn').hidden = false;
     $('#cvStatus').textContent = t('dyn.cvReady');
   }
 
@@ -564,27 +695,51 @@
     if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
     const jdText = ($('#cvJd')?.value || '').trim();
     const jdTitle = ($('#cvRole')?.value || '').trim();
+    const lang = ($('#cvLang')?.value || 'fr');
     if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
-    const btn = $('#cvGenerateBtn');
-    btn.disabled = true;
-    btn.style.opacity = '.6';
-    $('#cvStatus').textContent = t('dyn.cvGenerating');
-    $('#cvResult').hidden = true;
+    const btn = $('#cvGenerateBtn'); btn.disabled = true; btn.style.opacity = '.6';
+    $('#cvStatus').textContent = t('dyn.cvGenerating'); $('#cvResult').hidden = true;
     try {
-      const res = await fetch('/api/cv', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ profile, jdText, jdTitle }),
-      });
+      const res = await fetch('/api/cv', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle, lang }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || t('dyn.errCvGen'));
       renderCVResult(data);
-    } catch (e) {
-      $('#cvStatus').textContent = e.message || t('dyn.errCvGen');
-    } finally {
-      btn.disabled = false;
-      btn.style.opacity = '';
-    }
+    } catch (e) { $('#cvStatus').textContent = e.message || t('dyn.errCvGen'); }
+    finally { btn.disabled = false; btn.style.opacity = ''; }
+  }
+
+  async function generateCoverLetter() {
+    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    $('#cvStatus').textContent = '...';
+    try {
+      const res = await fetch('/api/cover-letter', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'', company: $('#cvCompany')?.value||'', lang: $('#cvLang')?.value||'fr' }) });
+      const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errCover'));
+      coverGenerated = data; $('#coverText').textContent = data.text || ''; $('#coverResult').hidden = false; $('#cvStatus').textContent = '';
+    } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errCover'); }
+  }
+  async function generatePrep() {
+    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    $('#cvStatus').textContent = '...';
+    try {
+      const res = await fetch('/api/interview-prep', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText, jdTitle: $('#cvRole')?.value||'' }) });
+      const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errPrep'));
+      const sec = (title, items) => '<div class="prep-sec"><h5>'+esc(title)+'</h5>'+items.map(i=>'<div class="prep-q"><strong>'+esc(i.q)+'</strong><div class="muted small-note">'+esc(i.why||'')+'</div><div class="small-note">STAR: '+esc(i.star||'')+'</div></div>').join('')+'</div>';
+      $('#prepContent').innerHTML = sec('Technical', data.technical||[]) + sec('Behavioral', data.behavioral||[]) + sec('Role', data.roleQuestions||[]) + (data.gapsToPrepare?.length?'<div class="prep-sec"><h5>Gaps to prepare</h5><ul class="small-list">'+data.gapsToPrepare.map(g=>'<li>'+esc(g)+'</li>').join('')+'</ul></div>':'');
+      $('#prepResult').hidden = false; $('#cvStatus').textContent = '';
+    } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errPrep'); }
+  }
+  async function generateGap() {
+    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim(); if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    $('#cvStatus').textContent = '...';
+    try {
+      const res = await fetch('/api/gap-roadmap', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ profile, jdText }) });
+      const data = await res.json(); if (!res.ok) throw new Error(data.error||t('dyn.errGap'));
+      $('#gapContent').innerHTML = (data.roadmap||[]).map(r=>'<div class="prep-q"><strong>'+esc(r.skill)+'</strong><div class="small-note">'+esc(r.action)+'</div><div class="small-note muted">'+esc(r.resource)+'</div><div class="small-note">'+esc(r.project)+'</div><div class="small-note muted">'+esc(r.honest)+'</div></div>').join('') || '<p class="muted">'+esc(t('dyn.noGaps'))+'</p>';
+      $('#gapResult').hidden = false; $('#cvStatus').textContent = '';
+    } catch(e){ $('#cvStatus').textContent = e.message||t('dyn.errGap'); }
   }
 
   function downloadCV() {
@@ -627,7 +782,17 @@
     $('#cvGenerateBtn')?.addEventListener('click', generateCV);
     $('#cvDownloadBtn')?.addEventListener('click', downloadCV);
     $('#cvPrintBtn')?.addEventListener('click', printCV);
-    $$('.filter').forEach(b => b.addEventListener('click', () => {
+    $('#cvCoverBtn')?.addEventListener('click', generateCoverLetter);
+    $('#cvPrepBtn')?.addEventListener('click', generatePrep);
+    $('#cvGapBtn')?.addEventListener('click', generateGap);
+    $('#cvSaveBtn')?.addEventListener('click', saveCVVersion);
+    $('#cvJdFile')?.addEventListener('change', e => { handleJdFile(e.target.files?.[0]); e.target.value=''; });
+    $('#coverCopyBtn')?.addEventListener('click', async ()=>{ try{ await navigator.clipboard.writeText($('#coverText').textContent||''); $('#cvStatus').textContent=t('dyn.copied'); }catch{} });
+    $('#coverDownloadBtn')?.addEventListener('click', ()=>{ if(!coverGenerated?.html) return; const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([coverGenerated.html],{type:'text/html;charset=utf-8'})); a.download='cover-letter.html'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); });
+    $('#trAddBtn')?.addEventListener('click', ()=>{ addTrackerItem({ company: $('#trCompany').value.trim(), role: $('#trRole').value.trim(), status: $('#trStatus').value, link: $('#trLink').value.trim() }); ['#trCompany','#trRole','#trLink'].forEach(id=>$(id).value=''); });
+    $('#trExportBtn')?.addEventListener('click', exportTracker);
+    $('#trImportInput')?.addEventListener('change', e=>{ if(e.target.files?.[0]) importTracker(e.target.files[0]); e.target.value=''; });
+    $('.filter').forEach(b => b.addEventListener('click', () => {
       filter = b.dataset.filter;
       $$('.filter').forEach(x => x.classList.toggle('is-active', x === b));
       loadJobs();
@@ -654,6 +819,8 @@
 
   applyI18n();
   initEvents();
+  renderTracker();
+  renderVersions();
   initIntake();
   initMotion();
   $('#year').textContent = new Date().getFullYear();

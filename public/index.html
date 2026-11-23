@@ -183,15 +183,31 @@
                   <span data-i18n="cvRoleLabel">Intitulé du poste (optionnel)</span>
                   <input id="cvRole" type="text" placeholder="ex. Développeur Full-Stack React/Node" />
                 </label>
+                <label class="field">
+                  <span data-i18n="cvCompanyLabel">Entreprise (optionnel)</span>
+                  <input id="cvCompany" type="text" placeholder="ex. ACME" />
+                </label>
+                <label class="field">
+                  <span data-i18n="cvLangLabel">Langue du CV</span>
+                  <select id="cvLang"><option value="fr">Français</option><option value="en">English</option></select>
+                </label>
                 <label class="field cv-tailor-jd">
                   <span data-i18n="cvJdLabel">Description du poste</span>
                   <textarea id="cvJd" rows="7" placeholder="Collez ici l'offre d'emploi / la description du poste…"></textarea>
                 </label>
+                <label class="field">
+                  <span data-i18n="cvJdFileLabel">Ou importer la JD (PDF/DOCX/TXT)</span>
+                  <input id="cvJdFile" type="file" accept=".pdf,.docx,.txt,.md" />
+                </label>
               </div>
               <div class="cv-tailor-actions">
                 <button class="btn" id="cvGenerateBtn" type="button"><span data-i18n="cvGenerate">Générer mon CV</span></button>
+                <button class="btn btn-ghost" id="cvCoverBtn" type="button"><span data-i18n="cvCoverBtn">Lettre de motivation</span></button>
+                <button class="btn btn-ghost" id="cvPrepBtn" type="button"><span data-i18n="cvPrepBtn">Préparation entretien</span></button>
+                <button class="btn btn-ghost" id="cvGapBtn" type="button"><span data-i18n="cvGapBtn">Plan de progression</span></button>
                 <button class="btn btn-ghost" id="cvDownloadBtn" type="button" hidden><span data-i18n="cvDownload">Télécharger HTML</span></button>
                 <button class="btn btn-ghost" id="cvPrintBtn" type="button" hidden><span data-i18n="cvPrint">Imprimer / PDF</span></button>
+                <button class="btn btn-ghost" id="cvSaveBtn" type="button" hidden><span data-i18n="cvSaveBtn">Sauver version</span></button>
                 <span class="muted cv-tailor-status" id="cvStatus" aria-live="polite"></span>
               </div>
               <div class="cv-tailor-result" id="cvResult" hidden>
@@ -206,6 +222,38 @@
                   <div class="cv-preview-head"><span data-i18n="cvPreview">Aperçu du CV généré</span></div>
                   <iframe id="cvPreviewFrame" class="cv-preview-frame" title="Aperçu CV" loading="lazy"></iframe>
                 </div>
+              </div>
+
+              <div class="tool-result" id="coverResult" hidden>
+                <div class="tool-result-head"><strong data-i18n="coverTitle">Lettre de motivation</strong><div class="tool-result-actions"><button class="btn btn-ghost btn-sm" id="coverCopyBtn" type="button" data-i18n="copyText">Copier</button><button class="btn btn-ghost btn-sm" id="coverDownloadBtn" type="button" data-i18n="cvDownload">Télécharger HTML</button></div></div>
+                <pre id="coverText" class="tool-pre"></pre>
+              </div>
+              <div class="tool-result" id="prepResult" hidden>
+                <div class="tool-result-head"><strong data-i18n="prepTitle">Préparation entretien</strong></div>
+                <div id="prepContent" class="tool-content"></div>
+              </div>
+              <div class="tool-result" id="gapResult" hidden>
+                <div class="tool-result-head"><strong data-i18n="gapTitle">Plan de progression</strong></div>
+                <div id="gapContent" class="tool-content"></div>
+              </div>
+            </div>
+
+            <div class="card tool-card" id="trackerCard">
+              <div class="cv-tailor-head"><div><p class="kicker" data-i18n="trackerKicker">SUIVI LOCAL</p><h4 data-i18n="trackerTitle">Suivi des candidatures & versions CV</h4><p class="muted" data-i18n="trackerSub">Stocké localement dans votre navigateur. Exportez/importez en JSON.</p></div></div>
+              <div class="tracker-grid">
+                <label class="field"><span data-i18n="trCompany">Entreprise</span><input id="trCompany" type="text"/></label>
+                <label class="field"><span data-i18n="trRole">Poste</span><input id="trRole" type="text"/></label>
+                <label class="field"><span data-i18n="trStatus">Statut</span><select id="trStatus"><option>Saved</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option></select></label>
+                <label class="field"><span data-i18n="trLink">Lien</span><input id="trLink" type="url" placeholder="https://..."/></label>
+              </div>
+              <div class="cv-tailor-actions">
+                <button class="btn btn-ghost" id="trAddBtn" type="button" data-i18n="trAdd">Ajouter au suivi</button>
+                <button class="btn btn-ghost" id="trExportBtn" type="button" data-i18n="trExport">Exporter JSON</button>
+                <label class="btn btn-ghost" style="cursor:pointer"><span data-i18n="trImport">Importer JSON</span><input id="trImportInput" type="file" accept=".json" hidden/></label>
+              </div>
+              <div class="tracker-lists">
+                <div><div class="cv-match-label" data-i18n="trList">Candidatures</div><div id="trackerList" class="tracker-list"></div></div>
+                <div><div class="cv-match-label" data-i18n="cvVersions">Versions CV</div><div id="cvVersions" class="tracker-list"></div></div>
               </div>
             </div>
 
