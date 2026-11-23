@@ -11,7 +11,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { health, analyzeRequest, jobsRequest } from './lib/handlers.mjs';
+import { health, analyzeRequest, jobsRequest, generateCVRequest } from './lib/handlers.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
@@ -48,6 +48,10 @@ const server = http.createServer(async (req, res) => {
     }
     if (req.method === 'POST' && url.pathname === '/api/jobs') {
       const result = await jobsRequest(req);
+      return json(res, result.status, result.body);
+    }
+    if (req.method === 'POST' && url.pathname === '/api/cv') {
+      const result = await generateCVRequest(req);
       return json(res, result.status, result.body);
     }
     if ((req.method === 'GET' || req.method === 'HEAD') && (url.pathname === '/' || !url.pathname.startsWith('/api/'))) {

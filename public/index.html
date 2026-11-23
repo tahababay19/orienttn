@@ -169,6 +169,46 @@
               <div class="card"><div class="card-head"><h4 data-i18n="blockLangues">Langues</h4></div><div class="chips" id="languages"></div><div class="mini-meta" id="expMeta"></div></div>
             </div>
             <div class="insight"><div class="insight-icon"><svg><use href="#i-spark"/></svg></div><div><h4 data-i18n="insightTitle">Votre angle le plus fort</h4><p id="archetypeText"></p><p class="gaps" id="gapsText"></p></div></div>
+
+            <div class="card cv-tailor" id="cvTailor">
+              <div class="cv-tailor-head">
+                <div>
+                  <p class="kicker" data-i18n="cvKicker">CV ADAPTÉ À L’OFFRE</p>
+                  <h4 data-i18n="cvTitle">Générez un CV adapté à l’offre</h4>
+                  <p class="muted" data-i18n="cvSub">Collez la description du poste. L’application analyse les mots-clés localement et génère un CV amélioré dans un format professionnel, sans API externe.</p>
+                </div>
+              </div>
+              <div class="cv-tailor-grid">
+                <label class="field">
+                  <span data-i18n="cvRoleLabel">Intitulé du poste (optionnel)</span>
+                  <input id="cvRole" type="text" placeholder="ex. Développeur Full-Stack React/Node" />
+                </label>
+                <label class="field cv-tailor-jd">
+                  <span data-i18n="cvJdLabel">Description du poste</span>
+                  <textarea id="cvJd" rows="7" placeholder="Collez ici l'offre d'emploi / la description du poste…"></textarea>
+                </label>
+              </div>
+              <div class="cv-tailor-actions">
+                <button class="btn" id="cvGenerateBtn" type="button"><span data-i18n="cvGenerate">Générer mon CV</span></button>
+                <button class="btn btn-ghost" id="cvDownloadBtn" type="button" hidden><span data-i18n="cvDownload">Télécharger HTML</span></button>
+                <button class="btn btn-ghost" id="cvPrintBtn" type="button" hidden><span data-i18n="cvPrint">Imprimer / PDF</span></button>
+                <span class="muted cv-tailor-status" id="cvStatus" aria-live="polite"></span>
+              </div>
+              <div class="cv-tailor-result" id="cvResult" hidden>
+                <div class="cv-match-summary">
+                  <div class="cv-match-kpi"><strong id="cvMatchPct">0%</strong><small>match</small></div>
+                  <div class="cv-match-cols">
+                    <div><div class="cv-match-label" data-i18n="cvMatched">Mots-clés couverts</div><div class="chips" id="cvMatched"></div></div>
+                    <div><div class="cv-match-label" data-i18n="cvMissing">À renforcer si vrai</div><div class="chips" id="cvMissing"></div></div>
+                  </div>
+                </div>
+                <div class="cv-preview-wrap">
+                  <div class="cv-preview-head"><span data-i18n="cvPreview">Aperçu du CV généré</span></div>
+                  <iframe id="cvPreviewFrame" class="cv-preview-frame" title="Aperçu CV" loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+
             <div class="panel-foot"><button class="btn btn-ghost" id="back1" type="button" data-i18n="back">Modifier mes informations</button><button class="btn btn-lg" id="toJobs" type="button"><span data-i18n="toJobs">Voir mes opportunités</span><svg><use href="#i-arrow"/></svg></button></div>
           </div>
         </div>

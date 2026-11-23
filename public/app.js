@@ -42,6 +42,17 @@
       ctaTitle: 'Votre prochain chapitre commence ici.', ctaBtn: 'Déposer mon CV',
       footNote: 'Fait pour les étudiants et diplômés tunisiens.', footTop: 'Retour en haut ↑',
       disclaimer: 'Outil d’orientation : les scores sont indicatifs et les offres doivent être vérifiées à la source. Aucune candidature n’est envoyée automatiquement.',
+      cvKicker: 'CV ADAPTÉ À L’OFFRE',
+      cvTitle: 'Générez un CV adapté à l’offre',
+      cvSub: 'Collez la description du poste. L’application analyse les mots-clés localement et génère un CV amélioré dans un format professionnel, sans API externe.',
+      cvJdLabel: 'Description du poste',
+      cvRoleLabel: 'Intitulé du poste (optionnel)',
+      cvGenerate: 'Générer mon CV',
+      cvDownload: 'Télécharger HTML',
+      cvPrint: 'Imprimer / PDF',
+      cvPreview: 'Aperçu du CV généré',
+      cvMatched: 'Mots-clés couverts',
+      cvMissing: 'À renforcer si vrai',
       dyn: {
         candidate: 'Candidat', years: 'années d’expérience estimées', level: 'Niveau',
         entry: 'Débutant', mid: 'Intermédiaire', senior: 'Senior',
@@ -56,6 +67,11 @@
         errNeed: 'Ajoutez un fichier ou collez au moins quelques lignes de votre CV.',
         errAnalyze: 'Lecture impossible. Réessayez avec un autre fichier ou collez le texte du CV.',
         errJobs: 'Impossible de charger les offres pour le moment. Réessayez dans un instant.',
+        errCvNeed: 'Collez une description de poste (au moins 40 caractères).',
+        errCvProfile: 'Analysez d’abord votre CV pour générer un CV adapté.',
+        errCvGen: 'Impossible de générer le CV pour le moment.',
+        cvGenerating: 'Génération du CV…',
+        cvReady: 'CV adapté généré — vous pouvez le télécharger ou l’imprimer en PDF.',
         restored: 'Profil restauré',
         engineAi: 'Analyse IA', engineHeuristic: 'Lecture locale',
         engineFallback: 'Analyse IA indisponible — lecture locale utilisée.',
@@ -98,6 +114,17 @@
       ctaTitle: 'Your next chapter starts here.', ctaBtn: 'Upload my CV',
       footNote: 'Built for Tunisian students and graduates.', footTop: 'Back to top ↑',
       disclaimer: 'Guidance tool: scores are indicative and offers must be checked at the source. No application is sent automatically.',
+      cvKicker: 'CV TAILORED TO THE JOB',
+      cvTitle: 'Generate a CV tailored to the job',
+      cvSub: 'Paste the job description. The app analyzes keywords locally and generates an improved CV in a professional format, with no external APIs.',
+      cvJdLabel: 'Job description',
+      cvRoleLabel: 'Job title (optional)',
+      cvGenerate: 'Generate my CV',
+      cvDownload: 'Download HTML',
+      cvPrint: 'Print / PDF',
+      cvPreview: 'Generated CV preview',
+      cvMatched: 'Matched keywords',
+      cvMissing: 'Strengthen if true',
       dyn: {
         candidate: 'Candidate', years: 'years of experience estimated', level: 'Level',
         entry: 'Entry', mid: 'Mid-level', senior: 'Senior',
@@ -112,6 +139,11 @@
         errNeed: 'Add a file or paste at least a few lines of your CV.',
         errAnalyze: 'Could not read it. Try another file or paste the CV text.',
         errJobs: 'Could not load offers right now. Try again in a moment.',
+        errCvNeed: 'Paste a job description (at least 40 characters).',
+        errCvProfile: 'Analyze your CV first to generate a tailored CV.',
+        errCvGen: 'Could not generate the CV right now.',
+        cvGenerating: 'Generating CV…',
+        cvReady: 'Tailored CV generated — you can download it or print to PDF.',
         restored: 'Profile restored',
         engineAi: 'AI analysis', engineHeuristic: 'Local analysis',
         engineFallback: 'AI unavailable — local analysis used.',
@@ -154,6 +186,17 @@
       ctaTitle: 'فصلك القادم يبدأ هنا.', ctaBtn: 'ارفع سيرتي',
       footNote: 'موجّه للطلاب والخريجين التونسيين.', footTop: 'العودة للأعلى ↑',
       disclaimer: 'أداة توجيه: الدرجات تقريبية ويجب التحقق من العروض في مصدرها. لا يتم إرسال أي ترشّح تلقائياً.',
+      cvKicker: 'سيرة ذاتية مكيّفة مع العرض',
+      cvTitle: 'أنشئ سيرة ذاتية مكيّفة مع الوظيفة',
+      cvSub: 'الصق وصف الوظيفة. يحلل التطبيق الكلمات المفتاحية محلياً ويولّد سيرة ذاتية محسّنة بتنسيق احترافي، بدون أي API خارجي.',
+      cvJdLabel: 'وصف الوظيفة',
+      cvRoleLabel: 'اسم الوظيفة (اختياري)',
+      cvGenerate: 'أنشئ سيرتي الذاتية',
+      cvDownload: 'تحميل HTML',
+      cvPrint: 'طباعة / PDF',
+      cvPreview: 'معاينة السيرة الذاتية',
+      cvMatched: 'الكلمات المفتاحية المطابقة',
+      cvMissing: 'للتعزيز إذا كان صحيحاً',
       dyn: {
         candidate: 'مُرشّح', years: 'سنة خبرة مقدّرة', level: 'المستوى',
         entry: 'مبتدئ', mid: 'متوسط', senior: 'خبير',
@@ -168,6 +211,11 @@
         errNeed: 'أضف ملفاً أو الصق بضعة أسطر من سيرتك.',
         errAnalyze: 'تعذّت القراءة. جرّب ملفاً آخر أو الصق نص السيرة.',
         errJobs: 'تعذّر تحميل العروض الآن. حاول بعد قليل.',
+        errCvNeed: 'الصق وصف الوظيفة (40 حرفاً على الأقل).',
+        errCvProfile: 'حلّل سيرتك الذاتية أولاً لإنشاء سيرة مكيّفة.',
+        errCvGen: 'تعذّر إنشاء السيرة الذاتية الآن.',
+        cvGenerating: 'جارٍ إنشاء السيرة الذاتية…',
+        cvReady: 'تم إنشاء السيرة الذاتية المكيّفة — يمكنك تحميلها أو طباعتها كـ PDF.',
         restored: 'تمت استعادة الملف',
         engineAi: 'تحليل بالذكاء الاصطناعي', engineHeuristic: 'تحليل محلي',
         engineFallback: 'تعذّر التحليل بالذكاء الاصطناعي — تم استخدام التحليل المحلي.',
@@ -182,6 +230,7 @@
   let lang = 'fr';
   let profile = null, jobsData = null, fileData = null;
   let filter = 'Tous', maxStep = 1, busy = false;
+  let cvGenerated = null;
   const PROFILE_KEY = 'orient-tn-profile';
 
   const dict = () => I18N[lang];
@@ -465,15 +514,105 @@
     }
   }
 
+  function resetCV() {
+    cvGenerated = null;
+    const r = $('#cvResult'); if (r) r.hidden = true;
+    const s = $('#cvStatus'); if (s) s.textContent = '';
+    const d = $('#cvDownloadBtn'); if (d) d.hidden = true;
+    const p = $('#cvPrintBtn'); if (p) p.hidden = true;
+    const f = $('#cvPreviewFrame'); if (f) f.removeAttribute('srcdoc');
+    const m = $('#cvMatched'); if (m) m.innerHTML = '';
+    const x = $('#cvMissing'); if (x) x.innerHTML = '';
+    const pct = $('#cvMatchPct'); if (pct) pct.textContent = '0%';
+  }
+
   function restart() {
     clearProfile();
     profile = null; jobsData = null; fileData = null; filter = 'Tous'; maxStep = 1;
     $('#file').value = ''; $('#fileChip').hidden = true; $('#cvText').value = '';
     $('#targetRole').value = ''; $('#city').value = 'Tunis';
     $('#contract').value = 'CDI'; $('#mode').value = 'Hybride'; $('#availability').value = 'Immédiate';
+    const jr = $('#cvJd'); if (jr) jr.value = '';
+    const cr = $('#cvRole'); if (cr) cr.value = '';
+    resetCV();
     $$('.filter').forEach(b => b.classList.toggle('is-active', b.dataset.filter === 'Tous'));
     clearError();
     goStep(1, true);
+  }
+
+  /* ---------- CV generation (local, no external API) ---------- */
+  function renderCVResult(data) {
+    cvGenerated = data;
+    $('#cvMatchPct').textContent = `${Number(data.match?.pct || 0)}%`;
+    const matched = data.match?.matched || [];
+    const missing = data.match?.missing || [];
+    $('#cvMatched').innerHTML = matched.length
+      ? matched.map(s => `<span class="chip hit">${esc(s)}</span>`).join('')
+      : `<span class="empty">${esc(t('dyn.none'))}</span>`;
+    $('#cvMissing').innerHTML = missing.length
+      ? missing.map(s => `<span class="chip gap">${esc(s)}</span>`).join('')
+      : `<span class="empty">${esc(t('dyn.none'))}</span>`;
+    const frame = $('#cvPreviewFrame');
+    if (frame) frame.srcdoc = data.html || '';
+    $('#cvResult').hidden = false;
+    $('#cvDownloadBtn').hidden = false;
+    $('#cvPrintBtn').hidden = false;
+    $('#cvStatus').textContent = t('dyn.cvReady');
+  }
+
+  async function generateCV() {
+    if (!profile) { $('#cvStatus').textContent = t('dyn.errCvProfile'); return; }
+    const jdText = ($('#cvJd')?.value || '').trim();
+    const jdTitle = ($('#cvRole')?.value || '').trim();
+    if (jdText.length < 40) { $('#cvStatus').textContent = t('dyn.errCvNeed'); return; }
+    const btn = $('#cvGenerateBtn');
+    btn.disabled = true;
+    btn.style.opacity = '.6';
+    $('#cvStatus').textContent = t('dyn.cvGenerating');
+    $('#cvResult').hidden = true;
+    try {
+      const res = await fetch('/api/cv', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ profile, jdText, jdTitle }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || t('dyn.errCvGen'));
+      renderCVResult(data);
+    } catch (e) {
+      $('#cvStatus').textContent = e.message || t('dyn.errCvGen');
+    } finally {
+      btn.disabled = false;
+      btn.style.opacity = '';
+    }
+  }
+
+  function downloadCV() {
+    if (!cvGenerated?.html) return;
+    const blob = new Blob([cvGenerated.html], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = cvGenerated.filename || 'cv-adapte.html';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+
+  function printCV() {
+    if (!cvGenerated?.html) return;
+    const frame = $('#cvPreviewFrame');
+    if (frame?.contentWindow) {
+      frame.contentWindow.focus();
+      frame.contentWindow.print();
+      return;
+    }
+    const w = window.open('', '_blank');
+    if (!w) return;
+    w.document.write(cvGenerated.html);
+    w.document.close();
+    w.focus();
+    w.print();
   }
 
   /* ---------- events ---------- */
@@ -485,6 +624,9 @@
     $('#back1').addEventListener('click', () => goStep(1));
     $('#back2').addEventListener('click', () => goStep(2));
     $('#restart').addEventListener('click', restart);
+    $('#cvGenerateBtn')?.addEventListener('click', generateCV);
+    $('#cvDownloadBtn')?.addEventListener('click', downloadCV);
+    $('#cvPrintBtn')?.addEventListener('click', printCV);
     $$('.filter').forEach(b => b.addEventListener('click', () => {
       filter = b.dataset.filter;
       $$('.filter').forEach(x => x.classList.toggle('is-active', x === b));
