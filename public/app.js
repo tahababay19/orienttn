@@ -72,7 +72,7 @@
       dyn: {
         candidate: 'Candidat', years: 'années d’expérience estimées', level: 'Niveau',
         entry: 'Débutant', mid: 'Intermédiaire', senior: 'Senior',
-        none: 'Non renseigné', noKw: 'Aucun mot-clé détecté', noGap: 'Aucun écart détecté', match: 'match', view: 'Voir l’offre',
+        none: 'Non renseigné', noKw: 'Aucun mot-clé tech détecté — collez une JD plus détaillée', noGap: 'Aucun écart — votre profil couvre tous les mots-clés', match: 'match', view: 'Voir l’offre',
         jobsSubtitle: '{name}, {n} offres analysées selon votre objectif et vos compétences.',
         archetype: 'Votre profil se rapproche d’un profil « {label} ». C’est l’angle à mettre en avant dans vos candidatures.',
         gaps: 'À renforcer : {list}', noJobs: 'Aucune offre en direct pour ce filtre. Les portails ci-dessus restent la meilleure piste.',
@@ -175,7 +175,7 @@
       dyn: {
         candidate: 'Candidate', years: 'years of experience estimated', level: 'Level',
         entry: 'Entry', mid: 'Mid-level', senior: 'Senior',
-        none: 'Not listed', noKw: 'No keywords detected', noGap: 'No gaps detected', match: 'match', view: 'View job',
+        none: 'Not listed', noKw: 'No tech keywords found — paste a more detailed JD', noGap: 'No gaps — your profile covers all keywords', match: 'match', view: 'View job',
         jobsSubtitle: '{name}, {n} offers analyzed against your goal and skills.',
         archetype: 'Your profile is close to a “{label}” profile. That’s the angle to lead with in applications.',
         gaps: 'To strengthen: {list}', noJobs: 'No live offers for this filter. The portals above remain your best lead.',
@@ -278,7 +278,7 @@
       dyn: {
         candidate: 'مُرشّح', years: 'سنة خبرة مقدّرة', level: 'المستوى',
         entry: 'مبتدئ', mid: 'متوسط', senior: 'خبير',
-        none: 'غير مذكور', noKw: 'لا كلمات مفتاحية', noGap: 'لا فجوات', match: 'تطابق', view: 'عرض الوظيفة',
+        none: 'غير مذكور', noKw: 'لا كلمات تقنية — الصق وصفاً أكثر تفصيلاً', noGap: 'لا فجوات — ملفك يغطي جميع الكلمات', match: 'تطابق', view: 'عرض الوظيفة',
         jobsSubtitle: '{name}، تم تحليل {n} عرضاً حسب هدفك ومهاراتك.',
         archetype: 'ملفك قريب من ملف «{label}». هذه هي الزاوية التي يجب إبرازها في ترشّحاتك.',
         gaps: 'نقاط للتقوية: {list}', noJobs: 'لا توجد عروض مباشرة لهذا المرشّح. البوابات أعلاه تبقى أفضل طريق.',
