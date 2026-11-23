@@ -12,7 +12,19 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
+<body class="ol-lock">
+<!-- orient.tn loader -->
+<div id="orient-loader" role="status" aria-live="polite" aria-label="Chargement">
+  <div class="ol-content">
+    <div class="ol-stage" aria-hidden="true">
+      <div class="ol-orbit"><i></i><i></i></div>
+      <div class="ol-bars"><b></b><b></b><b></b></div>
+    </div>
+    <div class="ol-word" aria-hidden="true">orient<span>.</span><span>tn</span></div>
+    <div class="ol-msg" id="ol-msg"></div>
+    <div class="ol-track" aria-hidden="true"><div class="ol-fill" id="ol-fill"></div></div>
+  </div>
+</div>
 <a class="skip" href="#studio">Aller à l'outil</a>
 
 <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +87,7 @@
         <div class="float-chip c1">React</div><div class="float-chip c2">Python</div>
         <div class="float-chip c3">SQL</div><div class="float-chip c4">Flutter</div>
         <div class="profile-card">
-          <div class="pc-top"><span class="pc-avatar">AM</span><div><strong data-i18n="pcName">Amira Mansouri</strong><small data-i18n="pcRole">Ingénieure informatique · Tunis</small></div><span class="pc-badge" data-i18n="pcBadge">Profil détecté</span></div>
+          <div class="pc-top"><span class="pc-avatar">CH</span><div><strong data-i18n="pcName">Cheker Hassan</strong><small data-i18n="pcRole">Ingénieure informatique · Tunis</small></div><span class="pc-badge" data-i18n="pcBadge">Profil détecté</span></div>
           <div class="pc-scan"><span></span></div>
           <div class="pc-row"><span data-i18n="pcSkills">Compétences</span><b>12</b></div>
           <div class="pc-bars"><i style="--w:92%"></i><i style="--w:74%"></i><i style="--w:58%"></i></div>
@@ -338,5 +350,58 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="/app.js" defer></script>
+<script>
+/* orient.tn loader */
+(() => {
+  const MIN_MS = 4500;
+  const MSG = {
+    fr: ["Lecture de votre parcours…", "Repérage de vos compétences…", "Recherche des portails adaptés…"],
+    en: ["Reading your background…", "Spotting your skills…", "Matching portals and offers…"],
+    ar: ["نقرأ مسارك المهني…", "نحدد مهاراتك…", "نبحث عن العروض المناسبة…"]
+  };
+  const el = document.getElementById('orient-loader');
+  const fill = document.getElementById('ol-fill');
+  const msgEl = document.getElementById('ol-msg');
+  let p, target, started, loaded, raf, timer, i;
+
+  const lang = () => { const l = (document.documentElement.lang || 'fr').slice(0, 2); return MSG[l] ? l : 'fr'; };
+
+  function show() {
+    cancelAnimationFrame(raf); clearInterval(timer);
+    const l = lang();
+    el.dir = l === 'ar' ? 'rtl' : 'ltr';
+    el.classList.remove('is-done'); el.hidden = false;
+    document.body.classList.add('ol-lock');
+    p = 0; i = 0; target = 88; loaded = document.readyState === 'complete'; started = performance.now();
+    msgEl.textContent = MSG[l][0];
+    timer = setInterval(() => {
+      msgEl.classList.add('is-out');
+      setTimeout(() => { i = (i + 1) % MSG[l].length; msgEl.textContent = MSG[l][i]; msgEl.classList.remove('is-out'); }, 250);
+    }, 1100);
+    tick();
+  }
+
+  function tick() {
+    if (loaded && performance.now() - started > MIN_MS) target = 100;
+    p += (target - p) * 0.045;
+    fill.style.transform = 'scaleX(' + Math.min(p / 100, 1) + ')';
+    if (target === 100 && p > 99.4) return hide();
+    raf = requestAnimationFrame(tick);
+  }
+
+  function hide() {
+    clearInterval(timer);
+    fill.style.transform = 'scaleX(1)';
+    el.classList.add('is-done');
+    el.addEventListener('animationend', () => {
+      el.hidden = true; document.body.classList.remove('ol-lock');
+    }, { once: true });
+  }
+
+  window.addEventListener('load', () => { loaded = true; });
+  window.orientLoader = { show, hide };
+  show();
+})();
+</script>
 </body>
 </html>

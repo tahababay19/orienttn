@@ -419,3 +419,59 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 
 @media(max-width:900px){.tracker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.tracker-grid,.tracker-lists{grid-template-columns:1fr}.tool-result-head{flex-direction:column;align-items:flex-start}.cv-tailor-actions .btn{width:100%}}
+
+/* ===== orient.tn loader ===== */
+:root{
+  --ol-navy:#1e3157; --ol-blue:#2f5fe0; --ol-green:#3f9b4f;
+  --ol-bg:#f7f9fc; --ol-muted:#5d6b85;
+}
+#orient-loader{
+  position:fixed; inset:0; z-index:99999;
+  display:grid; place-items:center;
+  background:
+    radial-gradient(60% 50% at 80% 10%, rgba(47,95,224,.14), transparent 70%),
+    radial-gradient(50% 40% at 10% 100%, rgba(63,155,79,.14), transparent 70%),
+    linear-gradient(rgba(30,49,87,.045) 1px, transparent 1px) 0 0/44px 44px,
+    linear-gradient(90deg, rgba(30,49,87,.045) 1px, transparent 1px) 0 0/44px 44px,
+    var(--ol-bg);
+  font-family:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ol-navy);
+  will-change:transform;
+}
+#orient-loader[hidden]{display:none}
+.ol-content{display:flex; flex-direction:column; align-items:center; gap:28px; padding:24px; text-align:center;
+  transition:opacity .35s ease, transform .35s ease}
+.ol-stage{position:relative; width:176px; height:176px; display:grid; place-items:center}
+.ol-orbit{position:absolute; inset:0; border:1.5px dashed rgba(30,49,87,.28); border-radius:50%;
+  animation:ol-spin 12s linear infinite}
+.ol-orbit i{position:absolute; width:14px; height:14px; border-radius:50%}
+.ol-orbit i:nth-child(1){top:-7px; left:calc(50% - 7px); background:var(--ol-green); box-shadow:0 0 0 7px rgba(63,155,79,.18)}
+.ol-orbit i:nth-child(2){bottom:14%; right:5%; background:var(--ol-blue); box-shadow:0 0 0 7px rgba(47,95,224,.16)}
+.ol-bars{display:flex; align-items:flex-end; gap:9px; height:64px}
+.ol-bars b{display:block; width:15px; border-radius:6px; transform-origin:50% 100%;
+  transform:skewX(-8deg) scaleY(.3); animation:ol-grow 1.5s cubic-bezier(.45,0,.2,1) infinite}
+.ol-bars b:nth-child(1){height:34px; background:var(--ol-blue)}
+.ol-bars b:nth-child(2){height:64px; background:var(--ol-navy); animation-delay:.18s}
+.ol-bars b:nth-child(3){height:48px; background:var(--ol-green); animation-delay:.36s}
+.ol-word{font-size:34px; font-weight:700; letter-spacing:-.02em; line-height:1}
+.ol-word span{color:var(--ol-blue)}
+.ol-word em{font-style:normal; display:inline-block; animation:ol-pop 1.5s ease-in-out infinite}
+.ol-msg{height:22px; font-size:16px; color:var(--ol-muted); transition:opacity .25s ease, transform .25s ease}
+.ol-msg.is-out{opacity:0; transform:translateY(6px)}
+.ol-track{width:min(260px,64vw); height:5px; border-radius:99px; background:rgba(30,49,87,.1); overflow:hidden}
+.ol-fill{height:100%; width:100%; border-radius:inherit; transform-origin:0 50%; transform:scaleX(0);
+  background:linear-gradient(90deg,var(--ol-navy),var(--ol-blue) 70%,var(--ol-green))}
+[dir="rtl"] .ol-fill{transform-origin:100% 50%}
+#orient-loader.is-done .ol-content{opacity:0; transform:translateY(-14px) scale(.97)}
+#orient-loader.is-done{animation:ol-lift .85s .3s cubic-bezier(.76,0,.24,1) forwards;
+  border-radius:0 0 50% 50% / 0 0 8vw 8vw}
+body.ol-lock{overflow:hidden}
+@keyframes ol-spin{to{transform:rotate(360deg)}}
+@keyframes ol-grow{0%,100%{transform:skewX(-8deg) scaleY(.3)} 45%,60%{transform:skewX(-8deg) scaleY(1)}}
+@keyframes ol-pop{0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)}}
+@keyframes ol-lift{to{transform:translateY(-105%)}}
+@media (prefers-reduced-motion:reduce){
+  .ol-orbit,.ol-bars b,.ol-word em{animation:none}
+  .ol-bars b{transform:skewX(-8deg) scaleY(1)}
+  #orient-loader.is-done{animation:none; opacity:0; transition:opacity .3s}
+}
