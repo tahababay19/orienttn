@@ -596,7 +596,7 @@
       </article>`;
     }).join('') : `<p class="notice">${esc(dy.noJobs)}</p>`;
 
-    $('#jobs .job-tailor').forEach(btn => btn.addEventListener('click', () => {
+    $$('#jobs .job-tailor').forEach(btn => btn.addEventListener('click', () => {
       const j = (jobsData.jobs||[])[Number(btn.dataset.jobIdx)];
       if (!j) return;
       $('#cvRole').value = j.title || '';
