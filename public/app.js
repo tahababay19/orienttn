@@ -55,7 +55,7 @@
       cvKicker: 'CV ADAPTÉ À L’OFFRE',
       cvTitle: 'Générez un CV adapté à l’offre',
       cvSub: 'Collez la description du poste. L’application analyse les mots-clés localement et génère un CV amélioré dans un format professionnel, sans API externe.',
-      cvJdLabel: 'Description du poste',
+      cvJdLabel: 'Description du poste (JD = Job Description)',
       cvRoleLabel: 'Intitulé du poste (optionnel)',
       cvGenerate: 'Générer mon CV',
       cvDownload: 'Télécharger HTML',
@@ -158,7 +158,7 @@
       cvKicker: 'CV TAILORED TO THE JOB',
       cvTitle: 'Generate a CV tailored to the job',
       cvSub: 'Paste the job description. The app analyzes keywords locally and generates an improved CV in a professional format, with no external APIs.',
-      cvJdLabel: 'Job description',
+      cvJdLabel: 'Job description (JD)',
       cvRoleLabel: 'Job title (optional)',
       cvGenerate: 'Generate my CV',
       cvDownload: 'Download HTML',
@@ -261,7 +261,7 @@
       cvKicker: 'سيرة ذاتية مكيّفة مع العرض',
       cvTitle: 'أنشئ سيرة ذاتية مكيّفة مع الوظيفة',
       cvSub: 'الصق وصف الوظيفة. يحلل التطبيق الكلمات المفتاحية محلياً ويولّد سيرة ذاتية محسّنة بتنسيق احترافي، بدون أي API خارجي.',
-      cvJdLabel: 'وصف الوظيفة',
+      cvJdLabel: 'وصف الوظيفة (JD)',
       cvRoleLabel: 'اسم الوظيفة (اختياري)',
       cvGenerate: 'أنشئ سيرتي الذاتية',
       cvDownload: 'تحميل HTML',
@@ -895,6 +895,7 @@
     $('#trExportBtn')?.addEventListener('click', exportTracker);
     $('#trImportInput')?.addEventListener('change', e=>{ if(e.target.files?.[0]) importTracker(e.target.files[0]); e.target.value=''; });
     $('#clearWorkspaceBtn')?.addEventListener('click', clearWorkspace);
+    document.addEventListener('click', e => { const btn = e.target.closest('[data-close]'); if (btn) { const id = btn.dataset.close; const el = document.getElementById(id); if (el) el.hidden = true; } });
     $$('.filter').forEach(b => b.addEventListener('click', () => {
       filter = b.dataset.filter;
       $$('.filter').forEach(x => x.classList.toggle('is-active', x === b));
