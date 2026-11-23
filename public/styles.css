@@ -194,7 +194,7 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
 .file-chip{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--accent);border-radius:100px;padding:8px 12px 8px 14px;color:var(--primary);font-size:.85rem;font-weight:600;max-width:100%}
 .file-chip svg{color:var(--accent)}
 .file-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.file-chip button{border:0;background:#dcfce7;color:#15803d;border-radius:50%;width:22px;height:22px;line-height:1;font-weight:700;flex:none}
+.file-chip button{border:0;background:#dcfce7;color:#15803d;border-radius:50%;width:28px;height:28px;line-height:1;font-weight:700;flex:none}
 .or{display:flex;align-items:center;gap:14px;color:var(--muted-fg);font-size:.8rem;margin:20px 0}
 .or::before,.or::after{content:'';flex:1;height:1px;background:var(--line)}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
@@ -326,6 +326,7 @@ svg{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;st
   .step-n{font-size:2rem}
 }
 @media(max-width:768px){
+  .lang,.filter,.btn-sm{min-height:44px;min-width:44px}
   .float-chip.c1{top:24px;right:3%}
   .float-chip.c2{top:70px;left:2%}
   .float-chip.c3{bottom:55px;left:3%}
