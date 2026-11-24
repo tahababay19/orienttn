@@ -1,6 +1,6 @@
 # Orient TN
 
-> **Academic project note:** This app was originally created by [chekerh](https://github.com/chekerh/orienttn). This submission is presented by **Taha Babay**, an electrical engineer ([tahababay19](https://github.com/tahababay19)), for a course project, with the original author's permission. See [CREDITS.md](CREDITS.md).
+> **Academic project note:** This submission is presented by **Taha Babay**, an electrical engineer ([tahababay19](https://github.com/tahababay19)). It is based on Orient TN, originally created by [chekerh](https://github.com/chekerh/orienttn) and provided for this course project with his permission. See [CREDITS.md](CREDITS.md).
 
 A standalone, login-free web app that turns a CV into a concrete job search for the Tunisian market. Works entirely on local heuristics — no AI required. Optional Claude AI enrichment available.
 
