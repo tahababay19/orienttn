@@ -107,7 +107,7 @@
         engineAi: 'Analyse IA', engineHeuristic: 'Lecture locale',
         engineFallback: 'Analyse IA indisponible — lecture locale utilisée.',
       },
-      ph: { role: 'ex. Développeur React, Data Analyst…', cv: 'Nom, expériences, formations, compétences, langues…' },
+      ph: { role: 'ex. Ingénieur électrique, Automaticien…', cv: 'Nom, expériences, formations, compétences, langues…' },
       contract: { 'CDI': 'CDI', 'CDD': 'CDD', 'Stage PFE': 'Stage PFE', 'SIVP': 'SIVP', 'CIVP': 'CIVP', 'Alternance': 'Alternance', 'Freelance': 'Freelance' },
       mode: { 'Hybride': 'Hybride', 'Sur site': 'Sur site', 'Télétravail': 'Télétravail' },
       availability: { 'Immédiate': 'Immédiate', '1 mois': '1 mois', '3 mois': '3 mois', 'En recherche active': 'En recherche active' },
@@ -210,7 +210,7 @@
         engineAi: 'AI analysis', engineHeuristic: 'Local analysis',
         engineFallback: 'AI unavailable — local analysis used.',
       },
-      ph: { role: 'e.g. React Developer, Data Analyst…', cv: 'Name, experience, education, skills, languages…' },
+      ph: { role: 'e.g. Electrical Engineer, Automation Engineer…', cv: 'Name, experience, education, skills, languages…' },
       contract: { 'CDI': 'Permanent (CDI)', 'CDD': 'Fixed-term (CDD)', 'Stage PFE': 'Internship / final-year project', 'SIVP': 'SIVP', 'CIVP': 'CIVP', 'Alternance': 'Apprenticeship', 'Freelance': 'Freelance' },
       mode: { 'Hybride': 'Hybrid', 'Sur site': 'On-site', 'Télétravail': 'Remote' },
       availability: { 'Immédiate': 'Immediately', '1 mois': '1 month', '3 mois': '3 months', 'En recherche active': 'Actively searching' },
@@ -313,7 +313,7 @@
         engineAi: 'تحليل بالذكاء الاصطناعي', engineHeuristic: 'تحليل محلي',
         engineFallback: 'تعذّر التحليل بالذكاء الاصطناعي — تم استخدام التحليل المحلي.',
       },
-      ph: { role: 'مثال: مطور React، محلل بيانات…', cv: 'الاسم، الخبرات، التكوينات، المهارات، اللغات…' },
+      ph: { role: 'مثال: مهندس كهرباء، مهندس تلقائية…', cv: 'الاسم، الخبرات، التكوينات، المهارات، اللغات…' },
       contract: { 'CDI': 'عقد دائم (CDI)', 'CDD': 'عقد محدد المدة (CDD)', 'Stage PFE': 'تربص / مشروع تخرج', 'SIVP': 'SIVP', 'CIVP': 'CIVP', 'Alternance': 'تكوين بالتناوب', 'Freelance': 'عمل حر' },
       mode: { 'Hybride': 'هجين', 'Sur site': 'في الموقع', 'Télétravail': 'عن بُعد' },
       availability: { 'Immédiate': 'فوراً', '1 mois': 'شهر واحد', '3 mois': '3 أشهر', 'En recherche active': 'في بحث نشط' },
@@ -729,10 +729,10 @@
   function loadDemoJD() {
     const lang = ($('#cvLang')?.value || 'fr');
     const demo = lang === 'en'
-      ? `Full-Stack Developer (React / Node.js)\nCompany: Tunis Tech\nLocation: Tunis (Hybrid)\nContract: CDI\n\nResponsibilities:\n- Build and maintain web applications using React, TypeScript, and Node.js\n- Design REST APIs and integrate PostgreSQL databases\n- Write clean, tested code and participate in code reviews\n- Collaborate with product/design teams in Agile/Scrum\n- Use Git, CI/CD pipelines, and Docker for delivery\n\nRequirements:\n- 2+ years experience in web development\n- Strong JavaScript/TypeScript, React, Node.js\n- SQL/PostgreSQL, Git, REST APIs\n- Good communication in French and English\nNice to have: Docker, AWS, testing, Next.js`
-      : `Développeur Full-Stack (React / Node.js)\nEntreprise : Tunis Tech\nLieu : Tunis (Hybride)\nContrat : CDI\n\nMissions :\n- Développer et maintenir des applications web avec React, TypeScript et Node.js\n- Concevoir des API REST et intégrer des bases PostgreSQL\n- Écrire du code propre, testé, et participer aux revues de code\n- Collaborer avec les équipes produit/design en Agile/Scrum\n- Utiliser Git, pipelines CI/CD et Docker pour la livraison\n\nProfil recherché :\n- 2+ ans d'expérience en développement web\n- Solide maîtrise JavaScript/TypeScript, React, Node.js\n- SQL/PostgreSQL, Git, API REST\n- Bonne communication en français et anglais\nAtouts : Docker, AWS, tests, Next.js`;
+      ? `Electrical Engineer — Power & Automation\nCompany: Industrie Tunis\nLocation: Tunis (Hybrid)\nContract: CDI\n\nResponsibilities:\n- Design and maintain electrical installations and control systems\n- Program PLCs and supervise SCADA/HMI systems\n- Size photovoltaic systems and perform network studies with ETAP\n- Ensure electrical protection, wiring and cabinet assembly\n- Collaborate with maintenance and production teams\n\nRequirements:\n- 2+ years experience in electrical engineering\n- Strong knowledge of PLC/SCADA, motor drives and protection\n- AutoCAD Electrical, ETAP, instrumentation\n- Good communication in French and English\nNice to have: photovoltaics, renewable energy, MATLAB/Simulink`
+      : `Ingénieur électrique — Énergie & Automatisme\nEntreprise : Industrie Tunis\nLieu : Tunis (Hybride)\nContrat : CDI\n\nMissions :\n- Concevoir et maintenir les installations électriques et systèmes de commande\n- Programmer les automates et superviser les systèmes SCADA/HMI\n- Dimensionner les installations photovoltaïques et étudier les réseaux avec ETAP\n- Assurer la protection électrique, le câblage et le montage d'armoires\n- Collaborer avec les équipes maintenance et production\n\nProfil recherché :\n- 2+ ans d'expérience en génie électrique\n- Solide maîtrise PLC/SCADA, variateurs et protection\n- AutoCAD Electrical, ETAP, instrumentation\n- Bonne communication en français et anglais\nAtouts : photovoltaïque, énergies renouvelables, MATLAB/Simulink`;
     $('#cvJd').value = demo;
-    if (!$('#cvRole')?.value) $('#cvRole').value = lang === 'en' ? 'Full-Stack Developer React/Node.js' : 'Développeur Full-Stack React/Node.js';
+    if (!$('#cvRole')?.value) $('#cvRole').value = lang === 'en' ? 'Electrical Engineer — Power & Automation' : 'Ingénieur électrique — Énergie & Automatisme';
     if (!$('#cvCompany')?.value) $('#cvCompany').value = 'Tunis Tech';
     $('#cvStatus').textContent = lang === 'en' ? 'Example JD loaded — you can edit it.' : 'Exemple JD chargé — vous pouvez le modifier.';
   }
