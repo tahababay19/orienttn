@@ -28,6 +28,7 @@ cd orienttn
 npm install
 npm start          # or: npm run dev  (auto-reload)
 npm run check      # syntax check
+npm test           # automated tests
 ```
 
 Node 18+. Port can be changed with `PORT=5000 npm start`.
@@ -83,3 +84,10 @@ Body capped at 4 MB. CV files at 3.5 MB.
 - **Heuristic engine** — regex-based extraction, no LLM needed
 - **Optional AI** — Claude structured output via `@anthropic-ai/sdk` (beta API)
 - **Design** — Crimson Pro + Work Sans + Noto Sans Arabic, dark navy/blue/green palette
+
+## Academic contributions
+
+- **Electrical-engineering extension** — domain-specific skill detection, job-title matching, learning roadmap and interview questions: [docs/ELECTRICAL_ENGINEERING.md](docs/ELECTRICAL_ENGINEERING.md)
+- **Windows compatibility fix** — the home page at `/` is now served correctly on Windows
+- **Automated tests + CI** — `npm test` runs three EE-focused tests; GitHub Actions re-runs checks and tests on every push
+- **Deployment** — live at https://orienttn.vercel.app

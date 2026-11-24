@@ -9,7 +9,9 @@ This submission is presented by **Taha Babay**, an electrical engineer ([tahabab
 - Windows compatibility fix in `server.mjs`: the home page at `/` is now served correctly on Windows (previously returned 404).
 - Corrected the local setup command in `README.md` to match the folder name `orienttn`.
 - Deployment of the application to Vercel at https://orienttn.vercel.app and project documentation.
-- Added this credits file.
+- Electrical-engineering domain extension: skill detection (`lib/profile.mjs`), job matching (`lib/jobs.mjs`), roadmap and interview content (`lib/career.mjs`).
+- Automated tests (`test/electrical.test.mjs`) and GitHub Actions CI (`.github/workflows/ci.yml`).
+- Added this credits file and [docs/ELECTRICAL_ENGINEERING.md](docs/ELECTRICAL_ENGINEERING.md).
 
 ## Original author
 
