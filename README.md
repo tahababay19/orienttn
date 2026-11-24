@@ -1,5 +1,7 @@
 # Orient TN
 
+> **Academic project note:** This app was originally created by [chekerh](https://github.com/chekerh/orienttn). This repository is maintained by `tahababay19` for a course project, with the original author's permission. See [CREDITS.md](CREDITS.md).
+
 A standalone, login-free web app that turns a CV into a concrete job search for the Tunisian market. Works entirely on local heuristics — no AI required. Optional Claude AI enrichment available.
 
 → **http://localhost:4180** after `npm start`.
@@ -20,7 +22,7 @@ A standalone, login-free web app that turns a CV into a concrete job search for 
 ## Run locally
 
 ```bash
-cd orient-tn
+cd orienttn
 npm install
 npm start          # or: npm run dev  (auto-reload)
 npm run check      # syntax check

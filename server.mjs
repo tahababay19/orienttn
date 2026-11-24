@@ -32,9 +32,9 @@ const json = (res, status, body) => {
 };
 
 const serve = (res, file) => {
-  const safe = path.normalize(file).replace(/^(\.\.(\/|\\|$))+/, '');
-  let full = path.join(PUBLIC, safe);
-  if (safe === '/' || safe === '.') full = path.join(PUBLIC, 'index.html');
+  const requested = file === '/' || file === '' ? 'index.html' : file.replace(/^\/+/, '');
+  const safe = path.normalize(requested).replace(/^(\.\.(\/|\\|$))+/, '');
+  const full = path.join(PUBLIC, safe);
   if (!full.startsWith(PUBLIC)) return json(res, 403, { error: 'Forbidden' });
   if (!fs.existsSync(full) || fs.statSync(full).isDirectory()) return json(res, 404, { error: 'Not found' });
   res.writeHead(200, {
