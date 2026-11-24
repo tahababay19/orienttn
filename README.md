@@ -2,6 +2,8 @@
 
 > **Academic project note:** This submission is presented by **Taha Babay**, an electrical engineer ([tahababay19](https://github.com/tahababay19)). It is based on Orient TN, originally created by [chekerh](https://github.com/chekerh/orienttn) and provided for this course project with his permission. See [CREDITS.md](CREDITS.md).
 
+**Live app:** https://orienttn.vercel.app
+
 A standalone, login-free web app that turns a CV into a concrete job search for the Tunisian market. Works entirely on local heuristics — no AI required. Optional Claude AI enrichment available.
 
 → **http://localhost:4180** after `npm start`.

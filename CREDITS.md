@@ -8,7 +8,7 @@ This submission is presented by **Taha Babay**, an electrical engineer ([tahabab
 
 - Windows compatibility fix in `server.mjs`: the home page at `/` is now served correctly on Windows (previously returned 404).
 - Corrected the local setup command in `README.md` to match the folder name `orienttn`.
-- Deployment of the application to Vercel and project documentation.
+- Deployment of the application to Vercel at https://orienttn.vercel.app and project documentation.
 - Added this credits file.
 
 ## Original author
